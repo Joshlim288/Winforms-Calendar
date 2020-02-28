@@ -1,12 +1,19 @@
-# Winforms-Calendar
+# A Winforms-Calendar control (System.Windows.Forms.Calendar)
+
 A calendar UI control for WinForms that can handle appointments, all-day events, and multiple day view support.
 
+Examples in C# and Vb
+
 ## History
+
 This calendar interface for WinForms was originally published to [CodeProject](https://www.codeproject.com/KB/docview/WinFormsCalendarView.aspx). It looks like it became a dead project in 2009.
 
-It was then forked to [SourceForge](https://sourceforge.net/projects/winformscalenda/). From there it also appears to have become dead in 2016.
+Foked to [SourceForge](https://sourceforge.net/projects/winformscalenda/). From there it also appears to have become dead in 2016.
 
-I have forked it here. This is intended to be, as much as possible, an active fork. I welcome any pull requests and suggested changes.
+Forked to https://noteacode.blogspot.com/2010/08/calendar-winforms-control.html 
+Download from google.com/site/noteacode/files/System.Windows.Forms.Calendar.zip?attredirects=0&d=1
+
+I have forked it here and merged the projects.
 
 ## About this Control (README copied from CodeProject)
 
@@ -19,10 +26,6 @@ I have forked it here. This is intended to be, as much as possible, an active fo
 As you can see in the screenshots, this is a fully capable calendar view for specifying appointments and all day events. It has several features so you can control what happens inside, like item blocking and item-oriented events.
 
 It's 100% managed code! No resources; as with most of my projects, you can just include all the source files into your project to make it work.
-
-### Background
-
-I found a couple of controls like this, but as always, they don't meet my needs, so here I come. It performs fairly well, but mostly will depend on your implementation - I'll explain that in the next section.
 
 ### Using the Code
 
