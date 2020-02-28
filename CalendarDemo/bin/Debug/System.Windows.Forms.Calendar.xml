@@ -1,0 +1,3648 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Windows.Forms.Calendar</name>
+    </assembly>
+    <members>
+        <member name="T:System.Windows.Forms.Calendar.CalendarViewRangeEventArgs">
+            <summary>
+            EventArgs for view range.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarViewRangeEventArgs.#ctor(System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarViewRangeEventArgs"/> class.
+            </summary>
+            <param name="start">The start.</param>
+            <param name="end">The end.</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarViewRangeEventArgs.Start">
+            <summary>
+            Gets the start date.
+            </summary>
+            <value>The start.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarViewRangeEventArgs.End">
+            <summary>
+            Gets the end date.
+            </summary>
+            <value>The end.</value>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.DateRangeChangedEventArgs">
+            <summary>
+            Event Argument for <see cref="T:System.Windows.Forms.Calendar.MonthView"/> when date selection changed.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.DateRangeChangedEventArgs.#ctor(System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.DateRangeChangedEventArgs"/> class.
+            </summary>
+            <param name="start">The start.</param>
+            <param name="end">The end.</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.DateRangeChangedEventArgs.Start">
+            <summary>
+            Gets or sets the start.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.DateRangeChangedEventArgs.End">
+            <summary>
+            Gets or sets the end.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarColorTable">
+            <summary>
+            Provides color information of calendar graphical elements
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarColorTable.Combine(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Returns the result of combining the specified colors
+            </summary>
+            <param name="c1">First color to combine</param>
+            <param name="c2">Second olor to combine</param>
+            <returns>Average of both colors</returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarColorTable.FromHex(System.String)">
+            <summary>
+            Converts the hex formatted color to a <see cref="T:System.Drawing.Color"/>
+            </summary>
+            <param name="hex"></param>
+            <returns></returns>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.Background">
+            <summary>
+            Background color of calendar
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayBackgroundEven">
+            <summary>
+            Background color of days in even months
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayBackgroundOdd">
+            <summary>
+            Background color of days in odd months
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayBackgroundSelected">
+            <summary>
+            Background color of selected days
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayBorder">
+            <summary>
+            Border of day
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayHeaderBackground">
+            <summary>
+            Background color of day headers.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayHeaderTodayText">
+            <summary>
+            Color of text of day headers
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayHeaderSecondaryText">
+            <summary>
+            Color of secondary text in headers
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayTopBorder">
+            <summary>
+            Color of border of the top part of the days
+            </summary>
+            <remarks>
+            The DayTop is the zone of the calendar where items that lasts all or more are placed.
+            </remarks>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayTopSelectedBorder">
+            <summary>
+            Color of border of the top parth of the days when selected
+            </summary>
+            <remarks>
+            The DayTop is the zone of the calendar where items that lasts all or more are placed.
+            </remarks>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayTopBackground">
+            <summary>
+            Background color of day tops.
+            </summary>
+            <remarks>
+            The DayTop is the zone of the calendar where items that lasts all or more are placed.
+            </remarks>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayTopSelectedBackground">
+            <summary>
+            Background color of selected day tops.
+            </summary>
+            <remarks>
+            The DayTop is the zone of the calendar where items that lasts all or more are placed.
+            </remarks>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.ItemBorder">
+            <summary>
+            Color of items borders
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.ItemBackground">
+            <summary>
+            Background color of items
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.ItemText">
+            <summary>
+            Forecolor of items
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.ItemSecondaryText">
+            <summary>
+            Color of secondary text on items (Dates and times)
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.ItemShadow">
+            <summary>
+            Color of items shadow
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.ItemSelectedBorder">
+            <summary>
+            Color of items selected border
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.ItemSelectedBackground">
+            <summary>
+            Background color of selected items
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.ItemSelectedText">
+            <summary>
+            Forecolor of selected items
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.WeekHeaderBackground">
+            <summary>
+            Background color of week headers
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.WeekHeaderBorder">
+            <summary>
+            Border color of week headers
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.WeekHeaderText">
+            <summary>
+            Forecolor of week headers
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.WeekDayName">
+            <summary>
+            Forecolor of day names
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TodayBorder">
+            <summary>
+            Border color of today day
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TodayTopBackground">
+            <summary>
+            Background color of today's DayTop
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TimeScaleLine">
+            <summary>
+            Color of lines in timescale
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TimeScaleHours">
+            <summary>
+            Color of text representing hours on the timescale
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TimeScaleMinutes">
+            <summary>
+            Color of text representing minutes on the timescale
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TimeUnitBackground">
+            <summary>
+            Background color of time units
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TimeUnitHighlightedBackground">
+            <summary>
+            Background color of highlighted time units
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TimeUnitSelectedBackground">
+            <summary>
+            Background color of selected time units
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TimeUnitBorderLight">
+            <summary>
+            Color of light border of time units
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.TimeUnitBorderDark">
+            <summary>
+            Color of dark border of time units
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayOverflowBorder">
+            <summary>
+            Arrow Border color of the overflow indicators
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayOverflowBackground">
+            <summary>
+            Arrow Background color of the overflow indicators
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarColorTable.DayOverflowSelectedBackground">
+            <summary>
+            Background color of selected overflow indicators
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarDayEventArgs">
+            <summary>
+            Event data with a <see cref="P:System.Windows.Forms.Calendar.CalendarDayEventArgs.CalendarDay"/> element
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDayEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarDay)">
+            <summary>
+            Creates a new event with the specified day
+            </summary>
+            <param name="day">Day of the event</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDayEventArgs.CalendarDay">
+            <summary>
+            Gets the day related to the event
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarDayTop">
+            <summary>
+            Represents the top area of a day, where multiday and all day items are stored
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDayTop.#ctor(System.Windows.Forms.Calendar.CalendarDay)">
+            <summary>
+            Creates a new DayTop for the specified day
+            </summary>
+            <param name="day"></param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDayTop.Date">
+            <summary>
+            Gets the calendar
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDayTop.Day">
+            <summary>
+            Gets the Day of this DayTop
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDayTop.PassingItems">
+            <summary>
+            Gets the list of items passing on this daytop
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDayTop.AddPassingItem(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Adds the passing item.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarHighlightRange">
+            <summary>
+            Represents a range of time that is highlighted as work-time
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarHighlightRange.#ctor">
+            <summary>
+            Creates a new empty range
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarHighlightRange.#ctor(System.DayOfWeek,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Creates a new range with the specified information
+            </summary>
+            <param name="day"></param>
+            <param name="startTime"></param>
+            <param name="endTime"></param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarHighlightRange.Calendar">
+            <summary>
+            Gets the calendar that this range is assigned to. (If any)
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarHighlightRange.DayOfWeek">
+            <summary>
+            Gets or sets the day of the week for this range
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarHighlightRange.StartTime">
+            <summary>
+            Gets or sets the start time of the range
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarHighlightRange.EndTime">
+            <summary>
+            Gets or sets the end time of the range
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarHighlightRange.Update">
+            <summary>
+            Tells the calendar to update the highligts
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarHighlightRange.SetCalendar(System.Windows.Forms.Calendar.Calendar)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.CalendarHighlightRange.Calendar"/> property
+            </summary>
+            <param name="calendar">Calendar that this range belongs to</param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs">
+            <summary>
+            CalendarItemCancelEventArgs
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Forms.Calendar.CalendarItemEventArgs"/>
+            </summary>
+            <param name="item">Related Item</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs.Item">
+            <summary>
+            Gets the <see cref="T:System.Windows.Forms.Calendar.CalendarItem"/> related to the event
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarItemEventArgs">
+            <summary>
+            CalendarItemEventArgs
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarItem,System.Windows.Forms.Calendar.States)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Forms.Calendar.CalendarItemEventArgs"/>
+            </summary>
+            <param name="item">Related Item</param>
+            <param name="state">Currently item state</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItemEventArgs.Item">
+            <summary>
+            Gets the <see cref="T:System.Windows.Forms.Calendar.CalendarItem"/> related to the event
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItemEventArgs.State">
+            <summary>
+            Gets the state.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarLoadEventArgs">
+            <summary>
+            Holds data of a Calendar Loading Items of certain date range
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarLoadEventArgs.#ctor(System.Windows.Forms.Calendar.Calendar,System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarLoadEventArgs"/> class.
+            </summary>
+            <param name="calendar">The calendar.</param>
+            <param name="dateStart">The date start.</param>
+            <param name="dateEnd">The date end.</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarLoadEventArgs.Calendar">
+            <summary>
+            Gets the calendar that originated the event
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarLoadEventArgs.DateStart">
+            <summary>
+            Gets the start date of the load
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarLoadEventArgs.DateEnd">
+            <summary>
+            Gets the end date of the load
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarProfessionalRenderer">
+            <summary>
+            CalendarProfessionalRenderer
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.HeaderA">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.HeaderB">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.HeaderC">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.HeaderD">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.TodayA">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.TodayB">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.TodayC">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.TodayD">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.#ctor(System.Windows.Forms.Calendar.Calendar)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarProfessionalRenderer"/> class.
+            </summary>
+            <param name="c">The c.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.GradientRect(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gradients the rect.
+            </summary>
+            <param name="g">The g.</param>
+            <param name="bounds">The bounds.</param>
+            <param name="a">A.</param>
+            <param name="b">The b.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.GlossyRect(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Glossies the rect.
+            </summary>
+            <param name="g">The g.</param>
+            <param name="bounds">The bounds.</param>
+            <param name="a">A.</param>
+            <param name="b">The b.</param>
+            <param name="c">The c.</param>
+            <param name="d">The d.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.FromHex(System.String)">
+            <summary>
+            Shortcut to one on CalendarColorTable
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.OnDrawItemShadow(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Draws the shadow of the specified item
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.OnDrawDayNameHeader(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints a name of the day column whenCalendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarProfessionalRenderer.OnDrawDayHeaderBackground(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Raises the <see cref="E:DrawDayHeaderBackground"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererDayEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarRenderer">
+            <summary>
+            Base class that renders visual elements of Calendar control
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarRenderer.Corners">
+            <summary>
+            Possible corners to pass to the RoundRectangle method
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.NorthWest">
+            <summary>
+            n/w
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.NorthEast">
+            <summary>
+            n/e
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.SouthEast">
+            <summary>
+            s/e
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.SouthWest">
+            <summary>
+            s/w
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.All">
+            <summary>
+            show all
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.North">
+            <summary>
+            upper side.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.South">
+            <summary>
+            bottom side.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.East">
+            <summary>
+            left side.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarRenderer.Corners.West">
+            <summary>
+            right side.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.CompareItems(System.Windows.Forms.Calendar.CalendarItem,System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Comparison delegate to sort items
+            </summary>
+            <param name="item1"></param>
+            <param name="item2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.CompareUnits(System.Windows.Forms.Calendar.CalendarTimeScaleUnit,System.Windows.Forms.Calendar.CalendarTimeScaleUnit)">
+            <summary>
+            Comparison delegate to sort units
+            </summary>
+            <param name="item1"></param>
+            <param name="item2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.CompareTops(System.Windows.Forms.Calendar.CalendarDayTop,System.Windows.Forms.Calendar.CalendarDayTop)">
+            <summary>
+            Compares both <see cref="T:System.Windows.Forms.Calendar.CalendarDayTop"/> items by Date
+            </summary>
+            <param name="top1"></param>
+            <param name="top2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.RoundRectangle(System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Creates a rectangle with rounded corners
+            </summary>
+            <param name="r"></param>
+            <param name="radius"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.RoundRectangle(System.Drawing.Rectangle,System.Int32,System.Windows.Forms.Calendar.CalendarRenderer.Corners)">
+            <summary>
+            Creates a rectangle with the specified corners rounded
+            </summary>
+            <param name="r"></param>
+            <param name="radius"></param>
+            <param name="corners"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.#ctor(System.Windows.Forms.Calendar.Calendar)">
+            <summary>
+            Creates a new renderer for the specified calendar
+            </summary>
+            <param name="calendar"></param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.DayTopItemsPadding">
+            <summary>
+            Gets or sets the padding of the items that goes on the top part of the days,
+            when in <see cref="F:System.Windows.Forms.Calendar.DaysModes.Expanded"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.DayTopHeight">
+            <summary>
+            Gets the current height of the all day items area
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.StandardItemHeight">
+            <summary>
+            Gets the height of items on day tops
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.DayTopMinHeight">
+            <summary>
+            Gets the minimum height for day tops
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.Calendar">
+            <summary>
+            Gets the <see cref="P:System.Windows.Forms.Calendar.CalendarRenderer.Calendar"/> this renderer belongs to
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.DayNameHeaderColumns">
+            <summary>
+            Gets the bounds for day name headers
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.DayHeaderHeight">
+            <summary>
+            Gets the height of the header of days
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.DayNameHeadersVisible">
+            <summary>
+            Gets a value indicating if the day names headers are visible (e.g. Monday, Tuesday, Wednesday ...)
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.DayNameHeadersHeight">
+            <summary>
+            Gets the height of the day name headers
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.ItemTextMargin">
+            <summary>
+            Gets the margin of the text in the items
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.ItemShadowPadding">
+            <summary>
+            Gets or sets the amount of pixels that the item's shadow is dropped
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.ItemInvalidateMargin">
+            <summary>
+            Gets or sets the extra margin for invalidating and redrawing items
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.ItemsPadding">
+            <summary>
+            Gets or sets the padding of items on expanded mode
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.ItemRoundness">
+            <summary>
+            Gets or sets the roundness of the item
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.TimeScaleBounds">
+            <summary>
+            Gets or sets the bounds of the timescale
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.TimeScaleUnitHeight">
+            <summary>
+            Gets the height of the rows on of the timescale
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.TimeScaleVisible">
+            <summary>
+            Gets if the TimeScale is currently visible.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.TimeScaleWidth">
+            <summary>
+            Gets the width of the timescale
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRenderer.WeekHeaderWidth">
+            <summary>
+            Gets the width of the header of weeks, whenCalendar.DaysMode in <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.GetTimeY(System.TimeSpan)">
+            <summary>
+            Gets the exact Y coordinate that corresponds to the specified time.
+            This only works when Calendar.DaysMode is in <c>Expanded</c> mode.
+            </summary>
+            <param name="time">Time of day to get Y coordinate</param>
+            <returns>Y coordinate corresponding to the specified <para>time</para></returns>
+            <exception cref="T:System.InvalidOperationException">When calendar is not in <c>Expaned</c> mode.</exception>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.ItemRectangle(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs,System.Drawing.Rectangle)">
+            <summary>
+            Creates a rectangle with item roundess
+            </summary>
+            <param name="evtData"></param>
+            <param name="bounds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.ItemFill(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Fills the specified rectangle with item border roundness
+            </summary>
+            <param name="e"></param>
+            <param name="bounds"></param>
+            <param name="north"></param>
+            <param name="south"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.ItemPattern(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs,System.Drawing.Rectangle,System.Drawing.Color)">
+            <summary>
+            Items the pattern.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs"/> instance containing the event data.</param>
+            <param name="bounds">The bounds.</param>
+            <param name="patternColor">Color of the pattern.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.ItemBorder(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs,System.Drawing.Rectangle,System.Drawing.Color,System.Single,System.Boolean)">
+            <summary>
+            Draws the specified rectangle with item border roundnesss
+            </summary>
+            <param name="e"></param>
+            <param name="bounds"></param>
+            <param name="color"></param>
+            <param name="width"></param>
+            <param name="drawDot"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.PerformLayout">
+            <summary>
+            Peform layout of elements and items of the calendar
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.PerformLayout(System.Boolean)">
+            <summary>
+            Updates the bounds of graphical elements.
+            Optionally calls <see cref="M:System.Windows.Forms.Calendar.CalendarRenderer.PerformItemsLayout"/> to update bounds of items.
+            </summary>
+            <remarks>
+            This method is called every time the <see cref="P:System.Windows.Forms.Calendar.CalendarRenderer.Calendar"/> control is resized.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.PerformItemsLayout">
+            <summary>
+            Updates the bounds of CalendarItems
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.PlaceInMatrix(System.Int32[0:,0:]@,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Places the specified item in the matrix for the layout engine purposes
+            </summary>
+            <param name="m"></param>
+            <param name="index"></param>
+            <param name="startX"></param>
+            <param name="endX"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.GetVisibleTimeUnits">
+            <summary>
+            Gets the amout of units that can be displayed on the calendar viewport
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.SetDayTopHeight(System.Int32)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.CalendarRenderer.DayTopHeight"/> property
+            </summary>
+            <param name="height">Height of all <see cref="T:System.Windows.Forms.Calendar.CalendarDayTop"/> elements</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.SetDayHeaderHeight(System.Int32)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.CalendarRenderer.DayHeaderHeight"/> property
+            </summary>
+            <param name="height">Height of the day header</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.SetDayNameHeadersHeight(System.Int32)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.CalendarRenderer.DayNameHeadersHeight"/> property
+            </summary>
+            <param name="height">Height of the day name headers</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.SetTimeScaleUnitHeight(System.Int32)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.CalendarRenderer.TimeScaleUnitHeight"/> property
+            </summary>
+            <param name="height">Height of the time scale unit</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.SetTimeScaleWidth(System.Int32)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.CalendarRenderer.TimeScaleWidth"/> property
+            </summary>
+            <param name="width">New width for the time scale</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.DrawStandarBoxText(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Draws text using the information of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/>
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.FindInMatrix(System.Int32[0:,0:],System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            Outs the location of the specified number in the matrix
+            </summary>
+            <param name="m">Matrix to search in</param>
+            <param name="number">Number to find</param>
+            <param name="left">Result left</param>
+            <param name="top">Result top</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.GetGroupBoundUnits(System.Collections.Generic.List{System.Windows.Forms.Calendar.CalendarItem},System.Int32@,System.Int32@)">
+            <summary>
+            Outs the startIndex and the endIndex of units in the group
+            </summary>
+            <param name="group"></param>
+            <param name="startIndex"></param>
+            <param name="endIndex"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.CollectIntersectingGroup(System.Windows.Forms.Calendar.CalendarItem,System.Collections.Generic.List{System.Windows.Forms.Calendar.CalendarItem},System.Collections.Generic.List{System.Windows.Forms.Calendar.CalendarItem})">
+            <summary>
+            Recursive method that collects items intersecting on time, to graphically represent-them on the layout
+            </summary>
+            <param name="calendarItem"></param>
+            <param name="items"></param>
+            <param name="grouped"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.PrintMatrix(System.Int32[0:,0:])">
+            <summary>
+            Prints the specified matrix on debug
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnInitialize(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Initializes the Calendar
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawBackground(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Paints the background of the calendar
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawTimeScale(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Paints the timescale of the calendar
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawTimeScaleHour(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints an hour of a timescale unit
+            </summary>
+            <param name="e">Paint Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawTimeScaleMinutes(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints minutes of a timescale unit
+            </summary>
+            <param name="e">Paint Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDays(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Paints the days on the current calendar view
+            </summary>
+            <param name="e">Paint Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDay(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Paints the specified day on the calendar
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayBorder(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Paints the border of the specified day
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayTop(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Draws the all day items area
+            </summary>
+            <param name="e">Paint Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayHeaderBackground(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Paints the background of the specified day's header
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayHeaderText(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs,System.DateTime)">
+            <summary>
+            Paints the header of the specified day
+            </summary>
+            <param name="e">Paint info</param>
+            <param name="atDate">Draw at date</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayTimeUnits(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Paints the body of the day. Usually timeline unit indicator lines or a solid color if 
+            Calendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayTimeUnit(System.Windows.Forms.Calendar.CalendarRendererTimeUnitEventArgs)">
+            <summary>
+            Draws a time unit of a day
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayNameHeaders(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Paints the name of the day columns when Calendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e">Paint Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayNameHeader(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints a name of the day column whenCalendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItems(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Draws the items of the calendar
+            </summary>
+            <param name="e">Event info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItem(System.Windows.Forms.Calendar.CalendarRendererItemEventArgs)">
+            <summary>
+            Draws an item of the calendar
+            </summary>
+            <param name="e">Event Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemBackground(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Draws the background of the specified item
+            </summary>
+            <param name="e">Event Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemPattern(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Raises the <see cref="E:DrawItemPattern"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemContent(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Draws the strings of an item. Strings inlude StartTime, EndTime and Text
+            </summary>
+            <param name="e">Event Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemText(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Draws the text of an item
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemImage(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Draws the image of an item
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemStartTime(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Draws the starttime of the item if applicable
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemEndTime(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Draws the end time of the item if applicable
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemBorder(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Draws the border of the specified item
+            </summary>
+            <param name="e">Event Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawItemShadow(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Draws the shadow of the specified item
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawOverflows(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Draws the overflows of days
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayOverflowStart(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Draws the overflow to start of specified day
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawDayOverflowEnd(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Draws the overflow to end of specified day
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawWeekHeaders(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Paints the headers of the week rows whenCalendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRenderer.OnDrawWeekHeader(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints the header of a week row whenCalendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.Calendar">
+            <summary>
+            Hosts a calendar view where user can manage calendar items.
+            </summary>
+            <remarks>
+            Authors: Jose Menendez P'oo
+            Website: http://www.codeproject.com/KB/docview/WinFormsCalendarView.aspx
+            License: LGPL at August 05, 2009.
+            --------
+            Modify: Thammapat Chatjiraroj
+            Email:  thammapat[at]gmail.com
+            Date:   October 30, 2009
+            please see ChangeLog.txt
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.DateIntersects(System.DateTime,System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            Returns a value indicating if two date ranges intersect
+            </summary>
+            <param name="startA">ViewStart</param>
+            <param name="endA">ViewEnd</param>
+            <param name="startB">dateItemStart</param>
+            <param name="endB">dateItemEnd</param>
+            <returns></returns>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.LoadItems">
+            <summary>
+            Occurs when items are load into view
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.DayHeaderClick">
+            <summary>
+            Occurs when a day header is clicked
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ViewChanged">
+            <summary>
+            Occurs when view has been changed.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemDrawContent">
+            <summary>
+            Occurs when draw item content.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemCreating">
+            <summary>
+            Occurs when an item is about to be created.
+            </summary>
+            <remarks>
+            Event can be cancelled
+            </remarks>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemCreated">
+            <summary>
+            Occurs when an item has been created.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemDeleting">
+            <summary>
+            Occurs before an item is deleted
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemDeleted">
+            <summary>
+            Occurs when an item has been deleted
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemTextEditing">
+            <summary>
+            Occurs when an item text is about to be edited
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemTextEdited">
+            <summary>
+            Occurs when an item text is edited
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemDatesChanged">
+            <summary>
+            Occurs when an item time range has changed when resize, drag.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemClick">
+            <summary>
+            Occurs when an item is clicked
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemDoubleClick">
+            <summary>
+            Occurs when an item is double-clicked
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemSelected">
+            <summary>
+            Occurs when an item is selected
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemsPositioned">
+            <summary>
+            Occurs after the items are positioned
+            </summary>
+            <remarks>
+            Items bounds can be altered using the CalendarItem.Bounds.
+            </remarks>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.Calendar.ItemMouseHover">
+            <summary>
+            Occurs when the mouse is moved over an item
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.Calendar.itemOnStateHited">
+            <summary>
+            Hit Item, occur on mouse down and detroy on mouse up.
+            <para>For checking StartDate and EndDate has changed or not.</para>
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.#ctor">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Forms.Calendar.Calendar"/> control
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.DefaultSize">
+            <summary>
+            Gets the default size of the control.
+            </summary>
+            <value></value>
+            <returns>
+            The default <see cref="T:System.Drawing.Size"/> of the control.
+            </returns>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.AllowNew">
+            <summary>
+            Gets or sets a value indicating if the control let's the user create new items.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.AllowItemEdit">
+            <summary>
+            Gets or sets a value indicating if the user can edit the item using the mouse or keyboard
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.AllowItemDelete">
+            <summary>
+            Gets or sets a value indicating if the user can delete the item using the mouse or keyboard
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.Days">
+            <summary>
+            Gets the days visible on the current view
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.Calendar.days">
+            <summary>
+            List of DateTime from <see cref="P:System.Windows.Forms.Calendar.Calendar.Days"/>.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.DaysMode">
+            <summary>
+            Gets the mode in which days are drawn.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.DaysBodyRectangle">
+            <summary>
+            Gets the union of day body rectangles
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.EditMode">
+            <summary>
+            Gets if the calendar is currently in edit mode of some item
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.EditModeItem">
+            <summary>
+            Gets the item being edited (if any)
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.FirstDayOfWeek">
+            <summary>
+            Gets or sets the first day of weeks
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.HighlightRanges">
+            <summary>
+            Gets or sets the time ranges that should be highlighted as work-time.
+            This ranges are week based.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.Items">
+            <summary>
+            Gets the collection of items currently on the view.
+            </summary>
+            <remarks>
+            This collection changes every time the view is changed
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.ItemsDateFormat">
+            <summary>
+            Gets or sets the format in which time is shown in the items, when applicable
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.ItemsTimeFormat">
+            <summary>
+            Gets or sets the format in which time is shown in the items, when applicable
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.MaximumFullDays">
+            <summary>
+            Gets or sets the maximum full days shown on the view. 
+            After this amount of days, they will be shown as short days.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.MaximumViewDays">
+            <summary>
+            Gets or sets the maximum amount of days supported by the view.
+            Value must be multiple of 7
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.Renderer">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Forms.Calendar.CalendarRenderer"/> of the <see cref="T:System.Windows.Forms.Calendar.Calendar"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.RendererMode">
+            <summary>
+            Gets or sets the renderer mode.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.SelectedElementEnd">
+            <summary>
+            Gets the last selected element
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.MultiSelect">
+            <summary>
+            Gets or sets a value indicating whether multi select at <see cref="T:System.Windows.Forms.Calendar.CalendarItem"/>.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.ShowWeekHeader">
+            <summary>
+            Get or set to show week header at left side when switch to DayMode.Short
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.SelectedElementStart">
+            <summary>
+            Gets the first selected element
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.SelectionEnd">
+            <summary>
+            Gets or sets the end date-time of the view's selection.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.SelectionStart">
+            <summary>
+            Gets or sets the start date-time of the view's selection.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.State">
+            <summary>
+            Gets or Internal Sets the state of the calendar
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.VScrollValue">
+            <summary>
+            Gets the Vertical scroll value.
+            </summary>
+            <value>The V scroll value.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.TextBox">
+            <summary>
+            Gets the TextBox of the edit mode
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.TimeScale">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Forms.Calendar.TimeScales"/> for visualization.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.TimeUnitsOffset">
+            <summary>
+            Gets or sets the offset of scrolled units
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.ViewEnd">
+            <summary>
+            Gets or sets the end date-time of the current view.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.ViewMode">
+            <summary>
+            Gets the view mode.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.DefaultStartTime">
+            <summary>
+            Gets or sets the default start time.
+            </summary>
+            <value>The default start time is 8:00</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.ViewStart">
+            <summary>
+            Gets or sets the start date-time of the current view.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.Weeks">
+            <summary>
+            Gets the weeks currently visible on the calendar, if <see cref="P:System.Windows.Forms.Calendar.Calendar.DaysMode"/> is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ActivateEditMode">
+            <summary>
+            Activates the edit mode on the first selected item
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ActivateEditMode(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Activates the edit mode on the specified item
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.CreateItemOnSelection(System.String,System.Boolean)">
+            <summary>
+            Creates a new item on the current selection. 
+            If there's no selection, this will be ignored.
+            </summary>
+            <param name="itemText">Text of the item</param>
+            <param name="editMode">If <c>true</c> activates the edit mode so user can edit the text of the item.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.EnsureVisible(System.Windows.Forms.Calendar.CalendarTimeScaleUnit)">
+            <summary>
+            Ensures the scrolling shows the specified time unit. It doesn't affect View date ranges.
+            </summary>
+            <param name="unit">Unit to ensure visibility</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.FinalizeEditMode(System.Boolean)">
+            <summary>
+            Finalizes editing the <see cref="P:System.Windows.Forms.Calendar.Calendar.EditModeItem"/>.
+            </summary>
+            <param name="cancel">Value indicating if edition of item should be canceled.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.FindDay(System.DateTime)">
+            <summary>
+            Finds the <see cref="T:System.Windows.Forms.Calendar.CalendarDay"/> for the specified date, if in the view.
+            </summary>
+            <param name="d">Date to find day</param>
+            <returns><see cref="T:System.Windows.Forms.Calendar.CalendarDay"/> object that matches the date, <c>null</c> if day was not found.</returns>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.Calendar.SelectedItems">
+            <summary>
+            Gets the items that are currently selected
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.GetTimeUnit(System.DateTime)">
+            <summary>
+            Gets the time unit that starts with the specified date
+            </summary>
+            <param name="d">Date and time of the unit you want to extract</param>
+            <returns>Matching time unit. <c>null</c> If out of range.</returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.HitTest(System.Drawing.Point)">
+            <summary>
+            Searches for the first hitted <see cref="T:System.Windows.Forms.Calendar.ICalendarSelectableElement"/>
+            </summary>
+            <param name="p">Point to check for hit test</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.HitTest(System.Drawing.Point,System.Boolean)">
+            <summary>
+            Searches for the first hitted <see cref="T:System.Windows.Forms.Calendar.ICalendarSelectableElement"/>
+            </summary>
+            <param name="p">Point to check for hit test</param>
+            <param name="ignoreItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ItemAt(System.Drawing.Point)">
+            <summary>
+            Returns the item hitted at the specified location. Null if no item hitted.
+            </summary>
+            <param name="p">Location to serach for items</param>
+            <returns>Hitted item at the location. Null if no item hitted.</returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.Invalidate(System.Windows.Forms.Calendar.CalendarDay)">
+            <summary>
+            Invalidates the bounds of the specified day
+            </summary>
+            <param name="day"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.Invalidate(System.Windows.Forms.Calendar.CalendarTimeScaleUnit)">
+            <summary>
+            Ivalidates the bounds of the specified unit
+            </summary>
+            <param name="unit"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.Invalidate(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Invalidates the area of the specified item
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.SetSelectionRange(System.Windows.Forms.Calendar.ICalendarSelectableElement,System.Windows.Forms.Calendar.ICalendarSelectableElement)">
+            <summary>
+            Establishes the selection range with only one graphical update.
+            </summary>
+            <param name="selectionStart">Fisrt selected element</param>
+            <param name="selectionEnd">Last selection element</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.SetViewRange(System.DateTime,System.DateTime)">
+            <summary>
+            Sets the value of <see cref="P:System.Windows.Forms.Calendar.Calendar.ViewStart"/> and <see cref="P:System.Windows.Forms.Calendar.Calendar.ViewEnd"/> properties
+            triggering only one repaint process
+            </summary>
+            <param name="dateStart">Start date of view</param>
+            <param name="dateEnd">End date of view</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ViewIntersects(System.DateTime,System.DateTime)">
+            <summary>
+            Returns a value indicating if the view range intersects the specified date range.
+            </summary>
+            <param name="dateStart"></param>
+            <param name="dateEnd"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ViewIntersects(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Returns a value indicating if the view range intersect the date range of the specified item
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ClearItems">
+            <summary>
+            Removes all the items currently on the calendar
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ClearSelectedItems">
+            <summary>
+            Unselects the selected items
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.DeleteSelectedItems">
+            <summary>
+            Deletes the currently selected item
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.Reload">
+            <summary>
+            Reload all item from current view.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.BeginUpdate">
+            <summary>
+            Begin the update and told graphics to suspense draw.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.EndUpdate">
+            <summary>
+            End of the update and re-invalidate.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.reloadItems">
+            <summary>
+            Clears current items and reloads for specified view
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.GrowSquare(System.Drawing.Rectangle)">
+            <summary>
+            Grows the rectangle to repaint currently selected elements
+            </summary>
+            <param name="rect"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ClearSelectedComponents">
+            <summary>
+            Clears selection of currently selected components (As quick as possible)
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ScrollCalendar(System.Int32)">
+            <summary>
+            Scrolls the calendar using the specified delta
+            </summary>
+            <param name="delta"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.RaiseItemsPositioned">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Calendar.Calendar.ItemsPositioned"/> event
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.ScrollTimeUnits(System.Int32)">
+            <summary>
+            Scrolls the time units using the specified delta
+            </summary>
+            <param name="delta"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.SetDaysMode(System.Windows.Forms.Calendar.DaysModes)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.Calendar.DaysMode"/> property.
+            </summary>
+            <param name="mode">Mode in which days will be rendered</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.RecalcScrollBar">
+            <summary>
+            Re-calculate Vertical ScrollBar.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.TextBox_LostFocus(System.Object,System.EventArgs)">
+            <summary>
+            Handles the LostFocus event of the TextBox that edit items
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.TextBox_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Handles the Keydown event of the TextBox that edit items
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.UpdateDaysAndWeeks">
+            <summary>
+            Updates the selected days and weeks.
+            </summary>
+            <returns>true if update success, otherwise false.</returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.UpdateHighlights">
+            <summary>
+            Updates the value of the <see cref="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Highlighted"/> 
+            property on the time units of days.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.UpdateSelectionElements">
+            <summary>
+            Informs elements who's selected and who's not, and repaints <see cref="F:System.Windows.Forms.Calendar.Calendar._selectedElementSquare"/>
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnCreateControl">
+            <summary>
+            Raises the <see cref="M:System.Windows.Forms.Control.CreateControl"/> method.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnClick(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Click"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnDoubleClick(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.DoubleClick"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnDayHeaderClick(System.Windows.Forms.Calendar.CalendarDayEventArgs)">
+            <summary>
+            Raises the <see cref="E:DayHeaderClick"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarDayEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnViewChanged(System.Windows.Forms.Calendar.CalendarViewRangeEventArgs)">
+            <summary>
+            Raises the <see cref="E:ViewChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarViewRangeEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemClick(System.Windows.Forms.Calendar.CalendarItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemClick"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemCreating(System.Windows.Forms.Calendar.CalendarItemCancelEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemCreating"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemCreated(System.Windows.Forms.Calendar.CalendarItemCancelEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemCreated"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemDrawContent(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemDraw"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemDeleting(System.Windows.Forms.Calendar.CalendarItemCancelEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemDeleting"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemDeleted(System.Windows.Forms.Calendar.CalendarItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemDeleted"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemDoubleClick(System.Windows.Forms.Calendar.CalendarItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemDoubleClick"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemEditing(System.Windows.Forms.Calendar.CalendarItemCancelEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemEditing"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemEdited(System.Windows.Forms.Calendar.CalendarItemCancelEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemEdited"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemSelected(System.Windows.Forms.Calendar.CalendarItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemSelected"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemsPositioned(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemsPositioned"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemDatesChanged(System.Windows.Forms.Calendar.CalendarItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemDatesChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnItemMouseHover(System.Windows.Forms.Calendar.CalendarItemEventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemMouseHover"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarItemEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.KeyPress"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.KeyPressEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnLoadItems(System.Windows.Forms.Calendar.CalendarLoadEventArgs)">
+            <summary>
+            Raises the <see cref="E:LoadItems"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.CalendarLoadEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseDown"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseMove"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseUp"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseWheel"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Paint"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.OnResize(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Resize"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.PreProcessMessage(System.Windows.Forms.Message@)">
+            <summary>
+            Preprocesses keyboard or input messages within the message loop before they are dispatched.
+            </summary>
+            <param name="msg">A <see cref="T:System.Windows.Forms.Message"/>, passed by reference, 
+            that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.</param>
+            <returns>
+            true if the message was processed by the control; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Stop keys from going to scrollbars, do not touch.
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarDay">
+            <summary>
+            Represents a day present on the <see cref="T:System.Windows.Forms.Calendar.Calendar"/> control's view.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDay.#ctor(System.Windows.Forms.Calendar.Calendar,System.DateTime,System.Int32)">
+            <summary>
+            Creates a new Day
+            </summary>
+            <param name="calendar">Calendar this day belongs to</param>
+            <param name="date">Date of the day</param>
+            <param name="index">Index of the day on the current calendar's view</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.ContainedItems">
+            <summary>
+            Gets or Sets a list of items contained on the day
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.DayTop">
+            <summary>
+            Gets the DayTop of the day, the place where multi-day and all-day items are placed
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.BodyBounds">
+            <summary>
+            Gets the bounds of the body of the day (where time-based CalendarItems are placed)
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.Date">
+            <summary>
+            Gets the date this day represents
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.HeaderBounds">
+            <summary>
+            Gets the bounds of the header of the day
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.Index">
+            <summary>
+            Gets the index of this day on the calendar
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.SpecifiedOnView">
+            <summary>
+            Gets a value indicating if the day is specified on the view (See remarks).
+            </summary>
+            <remarks>
+            A day may not be specified on the view, but still present to make up a square calendar.
+            This days should be drawn in a way that indicates it's necessary but unrequested presence.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.TimeUnits">
+            <summary>
+            Gets the time units contained on the day
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.OverflowStart">
+            <summary>
+            /// <summary>
+            Gets or Internal Sets a value indicating if the day contains items not shown through the start of the day
+            </summary>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.OverflowStartBounds">
+            <summary>
+            Gets the bounds of the <see cref="P:System.Windows.Forms.Calendar.CalendarDay.OverflowStart"/> indicator
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.OverflowStartSelected">
+            <summary>
+            Gets or Internal Sets a value indicating if the <see cref="P:System.Windows.Forms.Calendar.CalendarDay.OverflowStart"/> indicator is currently selected
+            </summary>
+            <remarks>
+            This value set to <c>true</c> when user hovers the mouse on the <see cref="P:System.Windows.Forms.Calendar.CalendarDay.OverflowStartBounds"/> area
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.OverflowEnd">
+            <summary>
+            Gets or Internal Sets a value indicating if the day contains items not shown through the end of the day
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.OverflowEndBounds">
+            <summary>
+            Gets the bounds of the <see cref="P:System.Windows.Forms.Calendar.CalendarDay.OverflowEnd"/> indicator
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarDay.OverflowEndSelected">
+            <summary>
+            Gets a value indicating if the <see cref="P:System.Windows.Forms.Calendar.CalendarDay.OverflowEnd"/> indicator is currently selected
+            </summary>
+            <remarks>
+            This value set to <c>true</c> when user hovers the mouse on the <see cref="P:System.Windows.Forms.Calendar.CalendarDay.OverflowStartBounds"/> area
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDay.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDay.AddContainedItem(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Adds an item to the <see cref="P:System.Windows.Forms.Calendar.CalendarDay.ContainedItems"/> list if not in yet
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDay.UpdateUnits">
+            <summary>
+            Updates the value of <see cref="P:System.Windows.Forms.Calendar.CalendarDay.TimeUnits"/> property
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDay.UpdateHighlights">
+            <summary>
+            Updates the highlights of the units
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.DaysModes">
+            <summary>
+            Enumerates the possible modes of the days visualization on the <see cref="T:System.Windows.Forms.Calendar.Calendar"/>
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.DaysModes.Short">
+            <summary>
+            A short version of the day is visible without time scale.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.DaysModes.Expanded">
+            <summary>
+            The day is fully visible with time scale.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.ViewModes">
+            <summary>
+            Display calendar mode.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.ViewModes.Day">
+            <summary>
+            1 day with time scale.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.ViewModes.Week">
+            <summary>
+            More than 1 day.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.ViewModes.Month">
+            <summary>
+            All days in 1 month.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.ItemImageAligns">
+            <summary>
+            Possible alignment for <see cref="T:System.Windows.Forms.Calendar.CalendarItem"/> images
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.ItemImageAligns.North">
+            <summary>
+            Image is drawn at north of text
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.ItemImageAligns.South">
+            <summary>
+            Image is drawn at south of text
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.ItemImageAligns.East">
+            <summary>
+            Image is drawn at east of text
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.ItemImageAligns.West">
+            <summary>
+            Image is drawn at west of text
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.RendererModes">
+            <summary>
+            Renderer modes.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.RendererModes.Classic">
+            <summary>
+            Classic style.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.RendererModes.Professional">
+            <summary>
+            Professional style.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.States">
+            <summary>
+            Possible states of the calendar
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.States.Idle">
+            <summary>
+            Nothing happening
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.States.DraggingTimeSelection">
+            <summary>
+            User is currently dragging on view to select a time range
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.States.DraggingItem">
+            <summary>
+            User is currently dragging an item among the view
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.States.EditingItemText">
+            <summary>
+            User is editing an item's Text
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.States.ResizingItem">
+            <summary>
+            User is currently resizing an item
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.States.MouseDowned">
+            <summary>
+            User pressed mouse down on the calendar.
+            </summary>
+            <remarks>
+            Thanks [oliFR43] to fixed it
+            Title: Every mouse click on an item results in a drag
+            link: http://www.codeproject.com/Messages/3202057/Every-mouse-click-on-an-item-results-in-a-drag.aspx
+            </remarks>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.TimeScales">
+            <summary>
+            Enumerates possible timescales for <see cref="T:System.Windows.Forms.Calendar.Calendar"/> control
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.TimeScales.SixtyMinutes">
+            <summary>
+            Makes calendar show intervals of 60 minutes
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.TimeScales.ThirtyMinutes">
+            <summary>
+            Makes calendar show intervals of 30 minutes
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.TimeScales.FifteenMinutes">
+            <summary>
+            Makes calendar show intervals of 15 minutes
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.TimeScales.TenMinutes">
+            <summary>
+            Makes calendar show intervals of 10 minutes
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.TimeScales.SixMinutes">
+            <summary>
+            Makes calendar show intervals of 6 minutes
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.TimeScales.FiveMinutes">
+            <summary>
+            Makes calendar show intervals of 5 minutes
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarItem">
+            <summary>
+            Represents an item of the calendar with a date and timespan
+            </summary>
+            <remarks>
+            <para>CalendarItem provides a graphical representation of tasks within a date range.</para>
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.CompareBounds(System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            Compares the top bounds between 2 <see cref="T:System.Drawing.Rectangle"/>.
+            </summary>
+            <param name="r1">The r1.</param>
+            <param name="r2">The r2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.#ctor(System.Windows.Forms.Calendar.Calendar)">
+            <summary>
+            Creates a new Item that belongs to the specified calendar
+            </summary>
+            <param name="calendar">Calendar to reference item</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.#ctor(System.Windows.Forms.Calendar.Calendar,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Creates a new item with the specified date range and text
+            </summary>
+            <param name="calendar">Calendar to reference item</param>
+            <param name="startDate">Start date of the item</param>
+            <param name="endDate">End date of the item</param>
+            <param name="subject">Text of the item</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.#ctor(System.Windows.Forms.Calendar.Calendar,System.DateTime,System.TimeSpan,System.String)">
+            <summary>
+            Creates a new item with the specified date, duration and text
+            </summary>
+            <param name="calendar">Calendar to reference item</param>
+            <param name="startDate">Start date of the item</param>
+            <param name="duration">Duration of the item</param>
+            <param name="subject">Text of the item</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.AditionalBounds">
+            <summary>
+            Gets or sets an array of rectangles containing bounds additional.
+            </summary>
+            <remarks>
+            Items may contain additional bounds because of several graphical occourences, mostly when <see cref="T:System.Windows.Forms.Calendar.Calendar"/> in 
+            <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/> mode, due to the duration of the item; e.g. when an all day item lasts several weeks, 
+            one rectangle for week must be drawn to indicate the presence of the item.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.BackColor">
+            <summary>
+            Gets or sets the a background color for the object. If Color.Empty, renderer default's will be used.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.BorderColor">
+            <summary>
+            Gets the bordercolor of the item. If Color.Empty, renderer default's will be used.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Date">
+            <summary>
+            Gets the StartDate of the item. This is not meaning.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.DayEnd">
+            <summary>
+            Gets the day on the <see cref="T:System.Windows.Forms.Calendar.Calendar"/> where this item ends
+            </summary>
+            <remarks>
+            This day is not necesarily the day corresponding to the day on <see cref="P:System.Windows.Forms.Calendar.CalendarItem.EndDate"/>, 
+            since this date can be out of the range of the current view.
+            <para>If Item is not on view date range this property will return null.</para>
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.DayStart">
+            <summary>
+            Gets the day on the <see cref="T:System.Windows.Forms.Calendar.Calendar"/> where this item starts
+            </summary>
+            <remarks>
+            This day is not necesarily the day corresponding to the day on <see cref="P:System.Windows.Forms.Calendar.CalendarItem.StartDate"/>, 
+            since start date can be out of the range of the current view.
+            <para>If Item is not on view date range this property will return null.</para>
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Duration">
+            <summary>
+            Gets the duration of the item
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.EndDate">
+            <summary>
+            Gets or sets the end time of the item
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.EndDateText">
+            <summary>
+            Gets the text of the end date
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.ForeColor">
+            <summary>
+            Gets the forecolor of the item. If Color.Empty, renderer default's will be used.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Image">
+            <summary>
+            Gets or sets an image for the item
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.ImageAlign">
+            <summary>
+            Gets or sets the alignment of the image relative to the text
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsDragging">
+            <summary>
+            Gets or Internal Sets a value indicating if the item is being dragged
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsEditing">
+            <summary>
+            Gets or Internal Sets a value indicating if the item is currently being edited by the user
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsOnDayTop">
+            <summary>
+            Gets a value indicating if the item goes on the DayTop area of the <see cref="T:System.Windows.Forms.Calendar.CalendarDay"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsOnView">
+            <summary>
+            Gets or Internal Sets a value indicating if the item is currently on view.
+            </summary>
+            <remarks>
+            The item may not be on view because of scrolling
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsOnViewDateRange">
+            <summary>
+            Gets a value indicating if the item is on the range specified by <see cref="P:System.Windows.Forms.Calendar.Calendar.ViewStart"/> and <see cref="P:System.Windows.Forms.Calendar.Calendar.ViewEnd"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsOpenStart">
+            <summary>
+            Gets a value indicating if the item's <see cref="P:System.Windows.Forms.Calendar.CalendarItem.StartDate"/> is before the <see cref="P:System.Windows.Forms.Calendar.Calendar.ViewStart"/> date.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsOpenEnd">
+            <summary>
+            Gets a value indicating if the item's <see cref="P:System.Windows.Forms.Calendar.CalendarItem.EndDate"/> is aftter the <see cref="P:System.Windows.Forms.Calendar.Calendar.ViewEnd"/> date.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsResizingStartDate">
+            <summary>
+            Gets or Internal Sets a value indicating if item is being resized by the <see cref="P:System.Windows.Forms.Calendar.CalendarItem.StartDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.IsResizingEndDate">
+            <summary>
+            Gets or Internal Sets a value indicating if item is being resized by the <see cref="P:System.Windows.Forms.Calendar.CalendarItem.EndDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Locked">
+            <summary>
+            Gets a value indicating if this item is locked.
+            </summary>
+            <remarks>
+            When an item is locked, the user can't drag it or change it's text
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Values">
+            <summary>
+            Gets or sets the extra values.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Visible">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:System.Windows.Forms.Calendar.CalendarItem"/> is visible.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.GetValue(System.String)">
+            <summary>
+            Gets the value from specific key name(ignore case)
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.LoadDataRow(System.Data.DataRow)">
+            <summary>
+            Loads from DataRow.
+            </summary>
+            <param name="row">The row.</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.MinuteEndTop">
+            <summary>
+            Gets or Internal Sets the top correspoinding to the ending minute
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.MinuteStartTop">
+            <summary>
+            Gets or Internal Sets the top corresponding to the starting minute
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.UnitsPassing">
+            <summary>
+            Gets or sets the units that this item passes by
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Pattern">
+            <summary>
+            Gets or sets the pattern style to use in the background of item.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.PatternColor">
+            <summary>
+            Gets or sets the pattern's color
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.TopsPassing">
+            <summary>
+            Gets the list of DayTops that this item passes thru
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.ShowStartTime">
+            <summary>
+            Gets a value indicating if the item should show the time of the <see cref="P:System.Windows.Forms.Calendar.CalendarItem.StartDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.ShowEndTime">
+            <summary>
+            Gets a value indicating if the item should show the time of the <see cref="P:System.Windows.Forms.Calendar.CalendarItem.EndDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.StartDateText">
+            <summary>
+            Gets the text of the start date
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.StartDate">
+            <summary>
+            Gets or sets the start time of the item
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Tag">
+            <summary>
+            Gets or sets the extra object for the item.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.Subject">
+            <summary>
+            Gets or sets the title of the item
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarItem.ToolTipText">
+            <summary>
+            Gets or sets the tool tip text.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.GetAllBounds">
+            <summary>
+            Gets all the bounds related to the item.
+            </summary>
+            <remarks>
+             Items that are broken on two or more weeks may have more than one rectangle bounds.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.RemoveColors">
+            <summary>
+            Removes all specific coloring for the item.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.ResizeStartDateZone(System.Drawing.Point)">
+            <summary>
+            Gets a value indicating if the specified point is in a resize zone of <see cref="P:System.Windows.Forms.Calendar.CalendarItem.StartDate"/>
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.ResizeEndDateZone(System.Drawing.Point)">
+            <summary>
+            Gets a value indicating if the specified point is in a resize zone of <see cref="P:System.Windows.Forms.Calendar.CalendarItem.EndDate"/>
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.IntersectsWith(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Indicates if the time of the item intersects with the provided time
+            </summary>
+            <param name="timeStart"></param>
+            <param name="timeEnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.AddBounds(System.Drawing.Rectangle)">
+            <summary>
+            Adds bounds for the item
+            </summary>
+            <param name="r"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.AddUnitPassing(System.Windows.Forms.Calendar.CalendarTimeScaleUnit)">
+            <summary>
+            Adds the specified unit as a passing unit
+            </summary>
+            <param name="calendarTimeScaleUnit"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.AddTopPassing(System.Windows.Forms.Calendar.CalendarDayTop)">
+            <summary>
+            Adds the specified <see cref="T:System.Windows.Forms.Calendar.CalendarDayTop"/> as a passing one
+            </summary>
+            <param name="top"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.ClearPassings">
+            <summary>
+            Clears the item's existance off passing units and tops
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.ClearBounds">
+            <summary>
+            Clears all bounds of the item
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.FirstAndLastRectangleGapping">
+            <summary>
+            It pushes the left and the right to the center of the item
+            to visually indicate start and end time
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItem.Clone">
+            <summary>
+            Clone this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarItemCollection">
+            <summary>
+            CalendarItemCollection
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.#ctor(System.Windows.Forms.Calendar.Calendar)">
+            <summary>
+            Creates a new collection that will belong to the specified calendar.
+            </summary>
+            <param name="c">Calendar this collection will belong to.</param>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.CalendarItemCollection.m_Calendar">
+            <summary>
+            Gets the calendar this collection belongs to
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.Add(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Adds an item to the end of the list
+            </summary>
+            <param name="item">The object to be added to the end of the collection. The value can be null for reference types.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.AddRange(System.Collections.Generic.IEnumerable{System.Windows.Forms.Calendar.CalendarItem})">
+            <summary>
+            Adds the items of the specified collection to the end of the list.
+            </summary>
+            <param name="items">The items whose elements should be added to the end of the collection. The collection itself cannont be null, but it can contain elements that are null.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.Clear">
+            <summary>
+            Removes all elements from the collection.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.Insert(System.Int32,System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Inserts an item into the collection at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which item should be inserted.</param>
+            <param name="item">The object to insert. The value can be null for reference types.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{System.Windows.Forms.Calendar.CalendarItem})">
+            <summary>
+            Inserts the items of a collection into this collection at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which the new elements should be inserted.</param>
+            <param name="items"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.Remove(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Removes the first occurrence of a specific object from the collection.
+            </summary>
+            <param name="item">The item to remove from the collection. The value can be null for reference types.</param>
+            <returns><c>true</c> if item is successfully removed; otherwise, <c>false</c>. This method also returns false if item was not found in the collection.</returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the item at the specified index of the collection
+            </summary>
+            <param name="index">The zero-based index of the item to remove.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.RemoveAll(System.Predicate{System.Windows.Forms.Calendar.CalendarItem})">
+            <summary>
+            Removes the all the items that match the conditions defined by the specified predicate.
+            </summary>
+            <param name="match">The Predicate delegate that defines the conditions of the items to remove.</param>
+            <returns>The number of items removed from the collection.</returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Removes a range of elements from the collection
+            </summary>
+            <param name="index">The zero-based starting index of the range of items to remove.</param>
+            <param name="count">The number of items to remove</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.Sort">
+            <summary>
+            Sorts the elements in the entire <see cref="T:System.Collections.Generic.List`1"/> using the ascending start date.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            The default comparer <see cref="P:System.Collections.Generic.Comparer`1.Default"/> cannot find an implementation of the <see cref="T:System.IComparable`1"/> generic interface or the <see cref="T:System.IComparable"/> interface for type <paramref name="T"/>.
+            </exception>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarItemCollection.CollectionChanged">
+            <summary>
+            Handles what to do when this collection changes
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarRendererDayEventArgs">
+            <summary>
+            Contains information about a day to draw on the calendar
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererDayEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Windows.Forms.Calendar.CalendarDay)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Forms.Calendar.CalendarRendererDayEventArgs"/> object
+            </summary>
+            <param name="original">Orignal object to copy basic paramters</param>
+            <param name="day">Day to render</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererDayEventArgs.Day">
+            <summary>
+            Gets the day to paint
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs">
+            <summary>
+            Contains basic information about a drawing event for <see cref="T:System.Windows.Forms.Calendar.CalendarRenderer"/>
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererEventArgs.#ctor">
+            <summary>
+            Use it wisely just to initialize some stuff
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererEventArgs.#ctor(System.Windows.Forms.Calendar.Calendar,System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/>
+            </summary>
+            <param name="calendar">Calendar where painting</param>
+            <param name="g">Device where to paint</param>
+            <param name="clipRectangle">Paint event clip area</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererEventArgs.#ctor(System.Windows.Forms.Calendar.Calendar,System.Drawing.Graphics,System.Drawing.Rectangle,System.Object)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/>
+            </summary>
+            <param name="calendar"></param>
+            <param name="g"></param>
+            <param name="clipRectangle"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Copies the parameters from the specified <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/>
+            </summary>
+            <param name="original"></param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererEventArgs.Calendar">
+            <summary>
+            Gets the calendar where painting
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererEventArgs.ClipRectangle">
+            <summary>
+            Gets the clip of the paint event
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererEventArgs.Graphics">
+            <summary>
+            Gets the device where to paint
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererEventArgs.Tag">
+            <summary>
+            Gets or sets a tag for the event
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs">
+            <summary>
+            Contains information about something's bounds and text to draw on the calendar
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.#ctor">
+            <summary>
+            Initializes some fields
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Drawing.Rectangle)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+            <param name="bounds">The bounds.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Drawing.Rectangle,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+            <param name="bounds">The bounds.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Drawing.Rectangle,System.String,System.Windows.Forms.TextFormatFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+            <param name="bounds">The bounds.</param>
+            <param name="text">The text.</param>
+            <param name="flags">The flags.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Drawing.Rectangle,System.String,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+            <param name="bounds">The bounds.</param>
+            <param name="text">The text.</param>
+            <param name="textColor">Color of the text.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Drawing.Rectangle,System.String,System.Drawing.Color,System.Windows.Forms.TextFormatFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+            <param name="bounds">The bounds.</param>
+            <param name="text">The text.</param>
+            <param name="textColor">Color of the text.</param>
+            <param name="flags">The flags.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Drawing.Rectangle,System.String,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+            <param name="bounds">The bounds.</param>
+            <param name="text">The text.</param>
+            <param name="textColor">Color of the text.</param>
+            <param name="backgroundColor">Color of the background.</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.BackgroundColor">
+            <summary>
+            Gets or sets the background color of the text
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.Bounds">
+            <summary>
+            Gets or sets the bounds to draw the text
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.Font">
+            <summary>
+            Gets or sets the font of the text to be rendered
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.Format">
+            <summary>
+            Gets or sets the format to draw the text
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.Item">
+            <summary>
+            Gets the item.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.Text">
+            <summary>
+            Gets or sets the text to draw
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.TextSize">
+            <summary>
+            Gets the result of measuring the text
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs.TextColor">
+            <summary>
+            Gets or sets the color to draw the text
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs">
+            <summary>
+            CalendarRendererItemBoundsEventArgs
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererItemEventArgs,System.Drawing.Rectangle,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a new Event
+            </summary>
+            <param name="original"></param>
+            <param name="bounds"></param>
+            <param name="isFirst"></param>
+            <param name="isLast"></param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs.Bounds">
+            <summary>
+            Gets the bounds of the item to be rendered.
+            </summary>
+            <remarks>
+            Items may have more than one bounds due to week segmentation.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs.IsFirst">
+            <summary>
+            Gets a value indicating if the bounds are the first of the item.
+            </summary>
+            <remarks>
+            Items may have more than one bounds due to week segmentation.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs.IsLast">
+            <summary>
+            Gets a value indicating if the bounds are the last of the item.
+            </summary>
+            <remarks>
+            Items may have more than one bounds due to week segmentation.
+            </remarks>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarRendererItemEventArgs">
+            <summary>
+            Contains information to render an item
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererItemEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererItemEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererItemEventArgs.Item">
+            <summary>
+            Gets the Item being rendered
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarRendererTimeUnitEventArgs">
+            <summary>
+            Contains information about a <see cref="T:System.Windows.Forms.Calendar.CalendarTimeScaleUnit"/> that is about to be painted
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarRendererTimeUnitEventArgs.#ctor(System.Windows.Forms.Calendar.CalendarRendererEventArgs,System.Windows.Forms.Calendar.CalendarTimeScaleUnit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarRendererTimeUnitEventArgs"/> class.
+            </summary>
+            <param name="original">The <see cref="T:System.Windows.Forms.Calendar.CalendarRendererEventArgs"/> instance containing the event data.</param>
+            <param name="unit">The unit.</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarRendererTimeUnitEventArgs.Unit">
+            <summary>
+            Gets the unit that is about to be painted
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarSelectableElement">
+            <summary>
+            Implements an abstact class from <see cref="T:System.Windows.Forms.Calendar.ICalendarSelectableElement"/>
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSelectableElement.#ctor(System.Windows.Forms.Calendar.Calendar)">
+            <summary>
+            Creates a new Element
+            </summary>
+            <param name="calendar"></param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarSelectableElement.Date">
+            <summary>
+            Gets the calendar
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarSelectableElement.Calendar">
+            <summary>
+            Gets the Calendar this element belongs to
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarSelectableElement.Bounds">
+            <summary>
+            Gets or Sets the Bounds of the element on the <see cref="P:System.Windows.Forms.Calendar.CalendarSelectableElement.Calendar"/> window
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarSelectableElement.Selected">
+            <summary>
+            Gets or Sets a value indicating the element is currently selected
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSelectableElement.CompareTo(System.Windows.Forms.Calendar.ICalendarSelectableElement)">
+            <summary>
+            Compares this element with other using date as comparer
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarSystemRenderer">
+            <summary>
+            CalendarRenderer that renders low-intensity calendar for slow computers
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.#ctor(System.Windows.Forms.Calendar.Calendar)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.CalendarSystemRenderer"/> class.
+            </summary>
+            <param name="c">The calendar</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarSystemRenderer.ColorTable">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Forms.Calendar.CalendarColorTable"/> for this renderer
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarSystemRenderer.SelectedItemBorder">
+            <summary>
+            Gets or sets the size of the border of selected items
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawBackground(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Paints the background of the calendar
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawDay(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Paints the specified day on the calendar
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawDayBorder(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Paints the border of the specified day
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawDayTop(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Draws the all day items area
+            </summary>
+            <param name="e">Paint Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawDayHeaderBackground(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Paints the background of the specified day's header
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawDayHeaderText(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs,System.DateTime)">
+            <summary>
+            Paints the header of the specified day
+            </summary>
+            <param name="e">Paint info</param>
+            <param name="atDate">Draw at date</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawWeekHeader(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints the header of a week row whenCalendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawDayTimeUnit(System.Windows.Forms.Calendar.CalendarRendererTimeUnitEventArgs)">
+            <summary>
+            Draws a time unit of a day
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawTimeScale(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Paints the timescale of the calendar
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawTimeScaleHour(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints an hour of a timescale unit
+            </summary>
+            <param name="e">Paint Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawTimeScaleMinutes(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints minutes of a timescale unit
+            </summary>
+            <param name="e">Paint Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawItemBackground(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Draws the background of the specified item
+            </summary>
+            <param name="e">Event Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawItemBorder(System.Windows.Forms.Calendar.CalendarRendererItemBoundsEventArgs)">
+            <summary>
+            Draws the border of the specified item
+            </summary>
+            <param name="e">Event Info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawItemStartTime(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Draws the starttime of the item if applicable
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawItemEndTime(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Draws the end time of the item if applicable
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawItemText(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Draws the text of an item
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawWeekHeaders(System.Windows.Forms.Calendar.CalendarRendererEventArgs)">
+            <summary>
+            Paints the headers of the week rows whenCalendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawDayNameHeader(System.Windows.Forms.Calendar.CalendarRendererBoxEventArgs)">
+            <summary>
+            Paints a name of the day column whenCalendar.DaysMode is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
+            </summary>
+            <param name="e">Paint info</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarSystemRenderer.OnDrawDayOverflowEnd(System.Windows.Forms.Calendar.CalendarRendererDayEventArgs)">
+            <summary>
+            Draws the overflow to end of specified day
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarTextBox">
+            <summary>
+            Calendar TextBox.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarTextBox.#ctor(System.Windows.Forms.Calendar.Calendar)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Forms.Calendar.CalendarTextBox"/> for the specified <see cref="P:System.Windows.Forms.Calendar.CalendarTextBox.Calendar"/>
+            </summary>
+            <param name="calendar">Calendar where this control lives</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTextBox.Calendar">
+            <summary>
+            Gets the calendar where this control lives
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarTimeScaleUnit">
+            <summary>
+            Represents a selectable timescale unit on a <see cref="T:System.Windows.Forms.Calendar.CalendarDay"/>
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.#ctor(System.Windows.Forms.Calendar.CalendarDay,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Forms.Calendar.CalendarTimeScaleUnit"/>
+            </summary>
+            <param name="day"><see cref="T:System.Windows.Forms.Calendar.CalendarDay"/> this unit belongs to</param>
+            <param name="index">Index of the unit relative to the container day</param>
+            <param name="hours">Hour of the unit</param>
+            <param name="minutes">Minutes of the unit</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Date">
+            <summary>
+            Gets the exact date when the unit starts
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Day">
+            <summary>
+            Gets the <see cref="T:System.Windows.Forms.Calendar.CalendarDay"/> this unit belongs to
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Duration">
+            <summary>
+            Gets the duration of the unit.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Highlighted">
+            <summary>
+            Gets or Internal Sets if the unit is highlighted because it fits in some of the calendar's highlight ranges
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Hours">
+            <summary>
+            Gets the hour when this unit starts
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Index">
+            <summary>
+            Gets the index of the unit relative to the day
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Minutes">
+            <summary>
+            Gets the minute when this unit starts
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.PassingItems">
+            <summary>
+            Gets or sets the amount of items that pass over the unit
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.Visible">
+            <summary>
+            Gets or Sets a value indicating if the unit is currently visible on viewport
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.CheckHighlighted">
+            <summary>
+            Gets a value indicating if the unit should be higlighted
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarTimeScaleUnit.ClearItemExistance(System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Clears existance of item from this unit and it's corresponding day.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.CalendarWeek">
+            <summary>
+            Represents a week displayed on the <see cref="P:System.Windows.Forms.Calendar.CalendarWeek.Calendar"/>
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarWeek.#ctor(System.Windows.Forms.Calendar.Calendar,System.DateTime)">
+            <summary>
+            Creates a new week for the specified calendar
+            </summary>
+            <param name="calendar">Calendar this week belongs to</param>
+            <param name="firstDay">Start day of the week</param>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarWeek.Bounds">
+            <summary>
+            Gets the bounds of the week
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarWeek.Calendar">
+            <summary>
+            Gets the calendar this week belongs to
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarWeek.HeaderBounds">
+            <summary>
+            Gets the bounds of the week header
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.CalendarWeek.StartDate">
+            <summary>
+            Gets the sunday that starts the week
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarWeek.ToStringShort">
+            <summary>
+            Gets the short version of week's string representation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarWeek.ToStringLarge">
+            <summary>
+            Gets the large version of string representation
+            </summary>
+            <returns>The week in a string format</returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarWeek.ToString">
+            <summary>
+            Returns a string representation of the week
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.ICalendarSelectableElement">
+            <summary>
+            Interface implemented by every selectable element of the calendar
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.ICalendarSelectableElement.Calendar">
+            <summary>
+            Gets the calendar this element belongs to
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.ICalendarSelectableElement.Date">
+            <summary>
+            Gets the calendar
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.ISelectableElement">
+            <summary>
+            Interface for clickable element of <see cref="T:System.Windows.Forms.Calendar.MonthView"/> and <see cref="T:System.Windows.Forms.Calendar.Calendar"/> control
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.ISelectableElement.Bounds">
+            <summary>
+            Gets the bounds of the element
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.ISelectableElement.Selected">
+            <summary>
+            Gets if the element is currently selected
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.MonthViewBoxEventArgs">
+            <summary>
+            Holds data about a box of text to be rendered on the month view
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewBoxEventArgs.Bounds">
+            <summary>
+            Gets or sets the bounds of the box
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewBoxEventArgs.Font">
+            <summary>
+            Gets or sets the font of the text. If null, default will be used.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewBoxEventArgs.Graphics">
+            <summary>
+            Gets or sets the Graphics object where to draw
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewBoxEventArgs.BorderColor">
+            <summary>
+            Gets or sets the border color of the box
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewBoxEventArgs.Text">
+            <summary>
+            Gets or sets the text of the box
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewBoxEventArgs.BackgroundColor">
+            <summary>
+            Gets or sets the background color of the box
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewBoxEventArgs.TextColor">
+            <summary>
+            Gets or sets the text color of the box
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewBoxEventArgs.TextFlags">
+            <summary>
+            Gets or sets the flags of the text
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.MonthViewDay">
+            <summary>
+            Month view day.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewDay.MonthView">
+            <summary>
+            Gets the parent MonthView
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewDay.Month">
+            <summary>
+            Gets the parent MonthViewMonth
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewDay.Bounds">
+            <summary>
+            Gets bounds of the day
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewDay.Date">
+            <summary>
+            Gets the date this day represents
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewDay.Selected">
+            <summary>
+            Gets the day is currently selected
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewDay.Grayed">
+            <summary>
+            Gets the day is grayed
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewDay.Visible">
+            <summary>
+            Gets a value indicating if the day instance is visible on the calendar
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthViewDay.SetBounds(System.Drawing.Rectangle)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.MonthViewDay.Bounds"/> property
+            </summary>
+            <param name="bounds"></param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.MonthViewMonth">
+            <summary>
+            Represents a month displayed on CalendarMonth.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.Bounds">
+            <summary>
+            Gets the bounds.
+            </summary>
+            <value>The bounds.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.MonthView">
+            <summary>
+            Gets the month view.
+            </summary>
+            <value>The month view.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.Location">
+            <summary>
+            Gets the location.
+            </summary>
+            <value>The location.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.Size">
+            <summary>
+            Gets the size.
+            </summary>
+            <value>The size.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.Days">
+            <summary>
+            Gets or sets the days.
+            </summary>
+            <value>The days.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.DayNamesBounds">
+            <summary>
+            Gets or sets the day names bounds.
+            </summary>
+            <value>The day names bounds.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.DayHeaders">
+            <summary>
+            Gets or sets the day headers.
+            </summary>
+            <value>The day headers.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.MonthNameBounds">
+            <summary>
+            Gets or sets the month name bounds.
+            </summary>
+            <value>The month name bounds.</value>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.MonthBounds">
+            <summary>
+            Gets the month bounds.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.YearBounds">
+            <summary>
+            Gets the year bounds.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthViewMonth.Date">
+            <summary>
+            Gets or sets the date of the first day of the month
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthViewMonth.SetLocation(System.Drawing.Point)">
+            <summary>
+            Sets the value of the <see cref="P:System.Windows.Forms.Calendar.MonthViewMonth.Location"/> property
+            </summary>
+            <param name="location"></param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.MonthView">
+            <summary>
+            Hosts a month-level calendar where user can select day-based dates.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.MonthView.MonthViewSelection">
+            <summary>
+            Represents the different kinds of selection in MonthView
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.MonthView.MonthViewSelection.Manual">
+            <summary>
+            User can select whatever date available to mouse reach
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.MonthView.MonthViewSelection.Day">
+            <summary>
+            Selection is limited to just one day
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.MonthView.MonthViewSelection.WorkWeek">
+            <summary>
+            Selecion is limited to <see cref="P:System.Windows.Forms.Calendar.MonthView.WorkWeekStart"/> and <see cref="P:System.Windows.Forms.Calendar.MonthView.WorkWeekEnd"/> weekly ranges
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.MonthView.MonthViewSelection.Week">
+            <summary>
+            Selection is limited to a full week
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.MonthView.MonthViewSelection.Month">
+            <summary>
+            Selection is limited to a full month
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.BackgroundImage">
+            <summary>
+            This is not meaning for this control.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.BackgroundImageLayout">
+            <summary>
+            This is not meaning for this control.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.Text">
+            <summary>
+            This is not meaning for this control.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.MonthView.SelectionChanged">
+            <summary>
+            Occurs when selection has changed.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Forms.Calendar.MonthView.DateChanged">
+            <summary>
+            Occurs when date has been changed.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnDateChanged(System.Windows.Forms.Calendar.DateRangeChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:DateChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.DateRangeChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnSelectionChanged(System.Windows.Forms.Calendar.DateRangeChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:SelectionChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.Calendar.DateRangeChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Calendar.MonthView"/> class.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DaySize">
+            <summary>
+            Gets the size of days rectangles
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DayNamesFormat">
+            <summary>
+            Gets or sets the format of day names.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DayNamesVisible">
+            <summary>
+            Gets or sets a value indicating if day names should be visible.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DayNamesLength">
+            <summary>
+            Gets or sets how many characters of day names should be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.FirstDayOfWeek">
+            <summary>
+            Gets or sets what the first day of weeks should be.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.BackwardButtonSelected">
+            <summary>
+            Gets a value indicating if the backward button is selected
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.BackwardButtonBounds">
+            <summary>
+            Gets the bounds of the backward button
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.ForwardButtonSelected">
+            <summary>
+            Gets a value indicating if the forward button is selected
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.ForwardButtonBounds">
+            <summary>
+            Gets the bounds of the forward button
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.Font">
+            <summary>
+            Gets or sets the Font of the Control
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.ItemPadding">
+            <summary>
+            Gets or sets the internal padding of items (Days, day names, month names).
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.MaxSelectionCount">
+            <summary>
+            Gets or sets the maximum selection count of days.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.Months">
+            <summary>
+            Gets the Months currently displayed on the calendar
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.MonthSize">
+            <summary>
+            Gets the size of an entire month inside the <see cref="T:System.Windows.Forms.Calendar.MonthView"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.MonthTitleFormat">
+            <summary>
+            Gets or sets the format of month titles.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.BackColor">
+            <summary>
+            Gets or sets the background color for the control.
+            </summary>
+            <value></value>
+            <returns>
+            A <see cref="T:System.Drawing.Color"/> that represents the background color of the control. The default is the value of the <see cref="P:System.Windows.Forms.Control.DefaultBackColor"/> property.
+            </returns>
+            <PermissionSet>
+            	<IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/>
+            </PermissionSet>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DefaultSize">
+            <summary>
+            Gets the default size of the control.
+            </summary>
+            <value></value>
+            <returns>
+            The default <see cref="T:System.Drawing.Size"/> of the control.
+            </returns>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.SelectionStart">
+            <summary>
+            Gets or sets the start of selection
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.SelectionEnd">
+            <summary>
+            Gets or sets the end of selection.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.SelectionMode">
+            <summary>
+            Gets or sets the selection mode of <see cref="T:System.Windows.Forms.Calendar.MonthView"/>
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.ViewStart">
+            <summary>
+            Gets or sets the date of the first displayed month.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.ViewEnd">
+            <summary>
+            Gets the last day of the last month showed on the view.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.WorkWeekStart">
+            <summary>
+            Gets or sets the day that starts a work-week.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.WorkWeekEnd">
+            <summary>
+            Gets or sets the day that ends a work-week.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.ArrowsSelectedColor">
+            <summary>
+            Gets or sets the color of the arrows selected.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.ArrowsColor">
+            <summary>
+            Gets or sets the color of the arrows.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DaySelectedTextColor">
+            <summary>
+            Gets or sets the color of the day selected text.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DaySelectedColor">
+            <summary>
+            Gets or sets the color of the day selected.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DaySelectedBackgroundColor">
+            <summary>
+            Gets or sets the color of the day selected background.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.DayBackgroundColor">
+            <summary>
+            Gets or sets the color of the days background.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.TrailingForeColor">
+            <summary>
+            Gets or sets the day grayed text.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.MonthTitleColor">
+            <summary>
+            Gets or sets the color of the month title.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.MonthTitleTextColor">
+            <summary>
+            Gets or sets the color of the month title text.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Forms.Calendar.MonthView.TodayBorderColor">
+            <summary>
+            Gets or sets the color of the today day border color.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.HitTest(System.Drawing.Point)">
+            <summary>
+            Checks if a day is hitted on the specified point
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.GoForward">
+            <summary>
+            Moves the view one month forward
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.GoBackward">
+            <summary>
+            Moves the view one month backward
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.SetSelectionRange(System.DateTime,System.DateTime)">
+            <summary>
+            Sets the selection range.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.SetForwardButtonSelected(System.Boolean)">
+            <summary>
+            Sets the value of the forward button selected.
+            </summary>
+            <param name="selected">Value indicating if button is selected</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.SetBackwardButtonSelected(System.Boolean)">
+            <summary>
+            Sets the value of the backward button selected.
+            </summary>
+            <param name="selected">Value indicating if button is selected</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.SelectWeek(System.DateTime)">
+            <summary>
+            Selects the week where the hit is contained
+            </summary>
+            <param name="hit"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.SelectWorkWeek(System.DateTime)">
+            <summary>
+            Selecs the work-week where the hit is contanied
+            </summary>
+            <param name="hit"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.SelectMonth(System.DateTime)">
+            <summary>
+            Selecs the month where the hit is contanied
+            </summary>
+            <param name="hit"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.DrawBox(System.Windows.Forms.Calendar.MonthViewBoxEventArgs)">
+            <summary>
+            Draws a box of text
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.GetDayFromSelection(System.DateTime)">
+            <summary>
+            Gets the <see cref="T:System.Windows.Forms.Calendar.MonthViewDay"/> from selection date.
+            </summary>
+            <param name="date">Selection date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnGotFocus(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.GotFocus"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseDown"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseMove"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseUp"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseWheel"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnLostFocus(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.LostFocus"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Paint"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.OnResize(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Resize"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.PreProcessMessage(System.Windows.Forms.Message@)">
+            <summary>
+            Preprocesses keyboard or input messages within the message loop before they are dispatched.
+            </summary>
+            <param name="msg">A <see cref="T:System.Windows.Forms.Message"/>, passed by reference, 
+            that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.</param>
+            <returns>
+            true if the message was processed by the control; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.MonthView.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Stop keys from going to scrollbars, do not touch.
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:System.Windows.Forms.Calendar.Win32Messages">
+            <summary>
+            Windows Message.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.Win32Messages.WM_KEYDOWN">
+            <summary>
+            Windows Message Constant.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.Win32Messages.WM_GETDLGCODE">
+            <summary>
+            Windows Message Constant.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.Win32Messages.DLGC_WANTCHARS">
+            <summary>
+            Windows Message Constant.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.Calendar.Win32Messages.DLGC_WANTARROWS">
+            <summary>
+            Windows Message Constant.
+            </summary>
+        </member>
+    </members>
+</doc>

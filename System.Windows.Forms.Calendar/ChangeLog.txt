@@ -1,0 +1,51 @@
+﻿Programmer	: Thammapat Chatjiraroj, he live in Bangkok, Thailand
+Email		: thammapat[at]gmail.com
+Job base on : Calendar of Jose Menendez Póo (link: http://www.codeproject.com/KB/docview/WinFormsCalendarView.aspx)
+Modify date : October 30, 2009	
+Add/Change:
+	
+	- Calendar class
+		- Inherit from class Control instead of ScrollableControl.
+		- Add vertical scrollbar for DaysMode.Expanded view.
+		- Add event 'ItemDrawContent' 
+		- Add method 'BeginUpdate' and 'EndUpdate'.
+		- Add property 'MultiSelect', 'RendererMode'
+		- Add ToolTip component
+		- Add Icon
+		- Override 'PreProcessMessage' for supported keyboard navigator(left, right, up, down, pageup, pagedown)
+			and editing item(insert, del, escape, f2).
+		- Override 'WndProc' to force focus after key down.
+		- Change some property name to shortly.
+		- Change method 'ScrollCalendar' from move a week -> move a month.
+		- Change all event signature to EventHandler<TEventArgs> style.
+		- Adjust FinalizeEditMode.
+		- Adjust draw item content.
+		- Adjust xml document.
+		- Double check before raise event 'ItemDatesChanged' is realy changed.
+		
+	- CalendarItemCollection class
+		- Add method 'Sort' when 'CollectionChanged'
+	
+	- CalendarItem class
+		- Add Property: ToolTipText, Values, Visible.
+		- Add Method: GetValue, LoadDataRow
+		- Implement interface ICloneable
+		- Adjust resizing, dragging behavior
+		
+	- CalendarSystemRenderer class
+		- Change some color
+		
+	- MonthView class
+		- Inherit from class Control instead of ContainerControl.
+		- Add Icon
+		- Add Method: SetSelectionRange(start, end)
+		- Add event 'DateChanged'.
+		- Add ContextMenuStrip when mouseup at title Month or Year.
+		- Override 'PreProcessMessage' for supported keyboard navigator(left, right, up, down, pageup, pagedown)
+		- Override 'WndProc' to force focus after key down.
+		- Adjust OnMouseMove when highlighting date[s], event 'SelectionChanged' will be raise after mouse up.
+		- Adjust OnMouseDown when clicked at gray text, go to that month.
+		- Adjust xml document.
+		- Change property name from 'DayGrayedText' -> 'TrailingForeColor'
+		- Remove property 'MonthTitleColorInActive', 'MonthTitleTextColorInActive'
+	

@@ -1,0 +1,5 @@
+C:\Users\david\Documents\Winforms-Calendar\System.Windows.Forms.Calendar\bin\Debug\System.Windows.Forms.Calendar.XML
+C:\Users\david\Documents\Winforms-Calendar\System.Windows.Forms.Calendar\bin\Debug\System.Windows.Forms.Calendar.dll
+C:\Users\david\Documents\Winforms-Calendar\System.Windows.Forms.Calendar\bin\Debug\System.Windows.Forms.Calendar.pdb
+C:\Users\david\Documents\Winforms-Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.dll
+C:\Users\david\Documents\Winforms-Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.pdb

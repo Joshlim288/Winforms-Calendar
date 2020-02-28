@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.monthView1 = new WindowsFormsCalendar.MonthView();
-            this.calendar1 = new WindowsFormsCalendar.Calendar();
+            this.monthView1 = new System.Windows.Forms.Calendar.MonthView();
+            this.calendar1 = new System.Windows.Forms.Calendar.Calendar();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,7 +95,7 @@
             this.calendar1.Size = new System.Drawing.Size(520, 562);
             this.calendar1.TabIndex = 0;
             this.calendar1.Text = "calendar1";
-            this.calendar1.LoadItems += new WindowsFormsCalendar.Calendar.CalendarLoadEventHandler(this.calendar1_LoadItems);
+            this.calendar1.LoadItems += new System.Windows.Forms.Calendar.Calendar.CalendarLoadEventHandler(this.calendar1_LoadItems);
             // 
             // Form1
             // 
@@ -117,8 +117,8 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private WindowsFormsCalendar.MonthView monthView1;
-        private WindowsFormsCalendar.Calendar calendar1;
+        private System.Windows.Forms.Calendar.MonthView monthView1;
+        private System.Windows.Forms.Calendar.Calendar calendar1;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

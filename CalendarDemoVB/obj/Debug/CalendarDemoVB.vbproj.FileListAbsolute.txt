@@ -1,0 +1,4 @@
+C:\Users\david\Documents\Winforms-Calendar\CalendarDemoVB\obj\Debug\CalendarDemoVB.vbprojAssemblyReference.cache
+C:\Users\david\Documents\Winforms-Calendar\CalendarDemoVB\obj\Debug\CalendarDemoVB.CalendarDemoVB.DemoForm.resources
+C:\Users\david\Documents\Winforms-Calendar\CalendarDemoVB\obj\Debug\CalendarDemoVB.Resources.resources
+C:\Users\david\Documents\Winforms-Calendar\CalendarDemoVB\obj\Debug\CalendarDemoVB.vbproj.GenerateResource.cache

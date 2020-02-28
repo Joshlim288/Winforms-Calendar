@@ -77,9 +77,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WindowsFormsCalendar\WindowsFormsCalendar.csproj">
-      <Project>{25649F08-3046-4891-ADB8-7EA787B57063}</Project>
-      <Name>WindowsFormsCalendar</Name>
+    <ProjectReference Include="..\System.Windows.Forms.Calendar\System.Windows.Forms.Calendar.csproj">
+      <Project>{39852dc2-a095-49b2-9835-603c8a1755b7}</Project>
+      <Name>System.Windows.Forms.Calendar</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

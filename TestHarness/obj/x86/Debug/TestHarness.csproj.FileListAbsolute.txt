@@ -1,0 +1,11 @@
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\bin\Debug\TestHarness.exe
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\bin\Debug\TestHarness.pdb
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\bin\Debug\WindowsFormsCalendar.dll
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\bin\Debug\WindowsFormsCalendar.pdb
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\obj\x86\Debug\TestHarness.csprojAssemblyReference.cache
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\obj\x86\Debug\TestHarness.Form1.resources
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\obj\x86\Debug\TestHarness.Properties.Resources.resources
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\obj\x86\Debug\TestHarness.csproj.GenerateResource.cache
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\obj\x86\Debug\TestHarness.csproj.CopyComplete
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\obj\x86\Debug\TestHarness.exe
+C:\Users\david\Documents\Winforms-Calendar\TestHarness\obj\x86\Debug\TestHarness.pdb
