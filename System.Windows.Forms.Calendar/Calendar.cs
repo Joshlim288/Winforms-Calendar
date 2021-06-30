@@ -189,6 +189,11 @@ namespace System.Windows.Forms.Calendar
         private CalendarDay _hitAtDay;
         internal bool m_Updating;
 
+        // Below are used for daily multi-column view
+        private Dictionary<int, DateTime> idToDayMapping;
+        private DateTime selectedDay;
+        
+
         #endregion
 
         #region Ctor
@@ -217,6 +222,8 @@ namespace System.Windows.Forms.Calendar
             this.m_VScrollBar.Visible = false;
             this.m_VScrollBar.Parent = this;
             this.m_VScrollBar.Scroll += new ScrollEventHandler(m_VScrollBar_Scroll);
+            idToDayMapping = new Dictionary<int, DateTime>();
+            selectedDay = DateTime.MinValue;
 
             _selectedElements = new List<CalendarSelectableElement>();
             _items = new CalendarItemCollection(this);
@@ -521,7 +528,10 @@ namespace System.Windows.Forms.Calendar
         ]
         public ICalendarSelectableElement SelectedElementEnd
         {
-            get { return _selectedElementEnd; }
+            get 
+            {
+                return _selectedElementEnd; 
+            }
             set 
             { 
                 _selectedElementEnd = value;
@@ -529,6 +539,22 @@ namespace System.Windows.Forms.Calendar
             }
         }
 
+        /// <summary>
+        /// Retrieves Datetime of calendar selection start, mapped back to the current day from column multi-view
+        /// </summary>
+        public DateTime getMappedSelectionStart()
+        {
+                return new DateTime(selectedDay.Year, selectedDay.Month, selectedDay.Day, _selectedElementStart.Date.Hour, _selectedElementStart.Date.Minute, 0);
+        }
+
+        /// <summary>
+        /// Retrieves Datetime of calendar selection end, mapped back to the current day from column multi-view
+        /// </summary>
+        public DateTime getMappedSelectionEnd()
+        {
+                return new DateTime(selectedDay.Year, selectedDay.Month, selectedDay.Day, _selectedElementEnd.Date.Hour, _selectedElementEnd.Date.Minute, 0);
+        }
+        
 
         private bool m_MultiSelect;
 
@@ -588,7 +614,10 @@ namespace System.Windows.Forms.Calendar
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ICalendarSelectableElement SelectedElementStart
         {
-            get { return _selectedElementStart; }
+            get 
+            {
+                return _selectedElementStart; 
+            }
             set 
             { 
                 _selectedElementStart = value;
@@ -613,10 +642,13 @@ namespace System.Windows.Forms.Calendar
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DateTime SelectionStart
         {
-            get { return _selStart; }
+            get 
+            { 
+                if (selectedDay != DateTime.MinValue) return new DateTime(selectedDay.Year, selectedDay.Month, selectedDay.Day, _selStart.Hour, _selStart.Minute, 0);
+                return _selStart; 
+            }
             set { _selStart = value; }
         }
-
         /// <summary>
         /// Gets or Internal Sets the state of the calendar
         /// </summary>
@@ -789,6 +821,47 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Public Methods
+        /// <summary>
+        /// Converts calendar view into multi-column view for a single day
+        /// </summary>
+        /// <param name="columnCount">Number of physicians</param>
+        /// <param name="physicianNames">Names of physicians</param>
+        /// <param name="physicianIDs">IDs of physicians. ID of physician must be at same index as his/her name in physicianNames</param>
+        /// <param name="selectedDay"></param>
+        public void startDailyView(int columnCount, string[] physicianNames, int[] physicianIDs, DateTime selectedDay)
+        {
+            MaximumFullDays = columnCount;
+            SetViewRange(DateTime.MinValue, DateTime.MinValue.AddDays(columnCount - 1));
+            setDayHeaders(physicianNames);
+            idToDayMapping.Clear();
+            this.selectedDay = selectedDay;
+            for (int i = 0; i<columnCount; i++)
+            {
+                idToDayMapping.Add(physicianIDs[i], DateTime.MinValue.AddDays(i));
+            }
+        }
+        /// <summary>
+        /// Resets variables used in daily view
+        /// </summary>
+        private void endDailyView()
+        {
+            idToDayMapping.Clear();
+            selectedDay = DateTime.MinValue;
+        }
+        /// <summary>
+        /// Adds a CalendarItem to the Items property to be displayed in multi-column daily view
+        /// </summary>
+        /// <param name="physicianID">ID of the physician this CalendarItem belongs to</param>
+        /// <param name="item">CalendarItem to be displayed</param>
+        public void addItemByPhysicianID(int physicianID, CalendarItem item)
+        {
+            DateTime mappedDT = idToDayMapping[physicianID];
+            DateTime oldDT = item.StartDate;
+            item.StartDate = new DateTime(mappedDT.Year, mappedDT.Month, mappedDT.Day, oldDT.Hour, oldDT.Minute, 0);
+            oldDT = item.EndDate;
+            item.EndDate = new DateTime(mappedDT.Year, mappedDT.Month, mappedDT.Day, oldDT.Hour, oldDT.Minute, 0);
+            Items.Add(item);
+        }
 
         /// <summary>
         /// Activates the edit mode on the first selected item
@@ -1201,6 +1274,10 @@ namespace System.Windows.Forms.Calendar
         /// <param name="dateEnd">End date of view</param>
         public void SetViewRange(DateTime dateStart, DateTime dateEnd)
         {
+            if (selectedDay != DateTime.MinValue)
+            {
+                endDailyView();
+            }
             // add if guard
             if ((this._viewStart != dateStart) || (this._viewEnd != dateEnd))
             {
@@ -1233,6 +1310,31 @@ namespace System.Windows.Forms.Calendar
         public bool ViewIntersects(CalendarItem item)
         {
             return ViewIntersects(item.StartDate, item.EndDate);
+        }
+        /// <summary>
+        /// Sets the day headers.
+        /// </summary>
+        /// <param name="headers">The headers.</param>
+        public void setDayHeaders(string[] headers)
+        {
+            if (headers.Length == Days.Count)
+            {
+                int i = 0;
+                foreach (CalendarDay day in Days)
+                {
+                    day.setHeader(headers[i]);
+                    Console.WriteLine(day.getHeader());
+                    i++;
+                }
+            }
+        }
+        /// <summary>
+        /// Gets the days.
+        /// </summary>
+        /// <returns></returns>
+        public List<CalendarDay> getDays()
+        {
+            return Days;
         }
 
         #endregion
@@ -1313,7 +1415,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public void Reload()
         {
-            // ไม่จำเป็นเพราะมันจะติดการ์ด if
+            // ไม่จำเป็นเพราะมันจะติดการ์?if
             //this.SetViewRange(this._viewStart, this._viewEnd);
 
             this.ClearItems();
@@ -2451,7 +2553,7 @@ namespace System.Windows.Forms.Calendar
                     {
                         #region Month view
 
-                        // ถ้าตัวเก่าได้เลือกไว้ และเลือกแค่เพียงวันเดียว
+                        // ถ้าตัวเก่าได้เลือกไว?และเลือกแค่เพียงวันเดียว
                         if ((_selectedElementStart != null) && (_selectedElementStart == _selectedElementEnd))
                         {
                             ClearSelectedItems();
@@ -2459,20 +2561,20 @@ namespace System.Windows.Forms.Calendar
                             int toNewIndex = selectedAt.Index + nMoveStep;
                             DateTime newDateToGo = selectedAt.Date.AddDays(nMoveStep);
 
-                            // ทำรองรับการคีย์ up ข้ามเดือนไว้ เหลือ key down ข้ามเดือน
+                            // ทำรองรับการคีย?up ข้ามเดือนไว้ เหลื?key down ข้ามเดือ?
                             if (toNewIndex < 0)
                             {
-                                // กดลูกศรชี้ขึ้น, ถอยหลัง 1 เดือน
+                                // กดลูกศรชี้ขึ้น, ถอยหลั?1 เดือ?
                                 this.ScrollCalendar(1); 
                             }
                             else if ( (keyCode == Keys.PageDown) || (!this.days.Contains(newDateToGo)) )
                             {
-                                // กดลูกศรชี้ลง, เดินหน้า 1 เดือน
+                                // กดลูกศรชี้ลง, เดินหน้า 1 เดือ?
                                 this.ScrollCalendar(-1);
                             }
 
 
-                            // หลังจาก scroll แล้ว วันที่ใน Days จะเปลี่ยนเป็นปฏิทินใหม่ สามารถเช็คได้จาก list ของวันที่(days)
+                            // หลังจา?scroll แล้ว วันที่ใน Days จะเปลี่ยนเป็นปฏิทินใหม?สามารถเช็คได้จาก list ของวันที?days)
                             toNewIndex = this.days.IndexOf(newDateToGo);
                             if (toNewIndex == -1)
                             { 

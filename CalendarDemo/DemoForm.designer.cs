@@ -67,6 +67,7 @@ namespace CalendarDemo
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.calendar1 = new System.Windows.Forms.Calendar.Calendar();
             this.monthView1 = new System.Windows.Forms.Calendar.MonthView();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -337,6 +338,7 @@ namespace CalendarDemo
         calendarHighlightRange4,
         calendarHighlightRange5};
             this.calendar1.Location = new System.Drawing.Point(202, 0);
+            this.calendar1.MaximumFullDays = 14;
             this.calendar1.Name = "calendar1";
             this.calendar1.Size = new System.Drawing.Size(675, 491);
             this.calendar1.TabIndex = 2;
@@ -362,11 +364,22 @@ namespace CalendarDemo
             this.monthView1.Text = "monthView1";
             this.monthView1.SelectionChanged += new System.EventHandler<System.Windows.Forms.Calendar.DateRangeChangedEventArgs>(this.monthView1_SelectionChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(57, 468);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DemoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 491);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.calendar1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.monthView1);
@@ -415,6 +428,7 @@ namespace CalendarDemo
         private System.Windows.Forms.ToolStripMenuItem eastToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem southToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem westToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

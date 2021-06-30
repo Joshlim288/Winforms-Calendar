@@ -1440,7 +1440,7 @@ namespace System.Windows.Forms.Calendar
 
             CalendarRendererBoxEventArgs hevt = new CalendarRendererBoxEventArgs(e,
                                                     day.HeaderBounds,
-                                                    day.Date.Day.ToString(),
+                                                    day.Date.ToString("dd"),
                                                     TextFormatFlags.VerticalCenter);
             // no bold
             //hevt.Font = new Font(Calendar.Font, FontStyle.Bold);
@@ -1448,7 +1448,7 @@ namespace System.Windows.Forms.Calendar
 
             CalendarRendererBoxEventArgs devt = new CalendarRendererBoxEventArgs(e,
                                                     day.HeaderBounds,
-                                                    day.Date.ToString("dddd"),
+                                                    day.getHeader(),
                                                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
             this.OnDrawDayHeaderBackground(e);
 
@@ -1546,7 +1546,7 @@ namespace System.Windows.Forms.Calendar
                 CalendarRendererBoxEventArgs crbe = new CalendarRendererBoxEventArgs(e,
                                                         DayNameHeaderColumns[i],
                                                         atDate.ToString("dddd"),
-                                                        TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter);
+                                                        TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter); ;
                 this.OnDrawDayNameHeader(crbe);
 
             }

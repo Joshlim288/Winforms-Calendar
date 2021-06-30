@@ -231,7 +231,13 @@ namespace CalendarDemo
 
         private void calendar1_DayHeaderClick(object sender, CalendarDayEventArgs e)
         {
-            calendar1.SetViewRange(e.CalendarDay.Date, e.CalendarDay.Date);
+            //calendar1.SetViewRange(e.CalendarDay.Date, e.CalendarDay.Date);
+            string[] headers = {"test1", "test2", "test3", "test4", "test5", "test6", "test7", "test8", "test9"};
+            int[] testPIDs = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            calendar1.startDailyView(9, headers, testPIDs, e.CalendarDay.Date);
+            DateTime test = new DateTime(2021, 6, 30, 12, 30, 0);
+            CalendarItem test1 = new CalendarItem(calendar1, test, test.AddMinutes(15), "test");
+            calendar1.addItemByPhysicianID(3, test1);
         }
 
         private void diagonalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -348,6 +354,19 @@ namespace CalendarDemo
 
         private void calendar1_ItemDatesChanged(object sender, CalendarItemEventArgs e)
         {
+        }
+
+        private void calendar1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(calendar1.SelectedElementStart.Date);
+            Console.WriteLine(calendar1.SelectedElementEnd.Date);
+            Console.WriteLine(calendar1.getMappedSelectionStart());
+            Console.WriteLine(calendar1.getMappedSelectionEnd());
         }
     }
 }

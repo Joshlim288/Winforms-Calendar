@@ -1294,6 +1294,16 @@
             Gets the last selected element
             </summary>
         </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.getMappedSelectionStart">
+            <summary>
+            Retrieves Datetime of calendar selection start, mapped back to the current day from column multi-view
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.getMappedSelectionEnd">
+            <summary>
+            Retrieves Datetime of calendar selection end, mapped back to the current day from column multi-view
+            </summary>
+        </member>
         <member name="P:System.Windows.Forms.Calendar.Calendar.MultiSelect">
             <summary>
             Gets or sets a value indicating whether multi select at <see cref="T:System.Windows.Forms.Calendar.CalendarItem"/>.
@@ -1370,6 +1380,27 @@
             <summary>
             Gets the weeks currently visible on the calendar, if <see cref="P:System.Windows.Forms.Calendar.Calendar.DaysMode"/> is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
             </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.startDailyView(System.Int32,System.String[],System.Int32[],System.DateTime)">
+            <summary>
+            Converts calendar view into multi-column view for a single day
+            </summary>
+            <param name="columnCount">Number of physicians</param>
+            <param name="physicianNames">Names of physicians</param>
+            <param name="physicianIDs">IDs of physicians. ID of physician must be at same index as his/her name in physicianNames</param>
+            <param name="selectedDay"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.endDailyView">
+            <summary>
+            Resets variables used in daily view
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.addItemByPhysicianID(System.Int32,System.Windows.Forms.Calendar.CalendarItem)">
+            <summary>
+            Adds a CalendarItem to the Items property to be displayed in multi-column daily view
+            </summary>
+            <param name="physicianID">ID of the physician this CalendarItem belongs to</param>
+            <param name="item">CalendarItem to be displayed</param>
         </member>
         <member name="M:System.Windows.Forms.Calendar.Calendar.ActivateEditMode">
             <summary>
@@ -1489,6 +1520,18 @@
             Returns a value indicating if the view range intersect the date range of the specified item
             </summary>
             <param name="item"></param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.setDayHeaders(System.String[])">
+            <summary>
+            Sets the day headers.
+            </summary>
+            <param name="headers">The headers.</param>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.getDays">
+            <summary>
+            Gets the days.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:System.Windows.Forms.Calendar.Calendar.ClearItems">
             <summary>
@@ -1868,6 +1911,17 @@
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDay.setHeader(System.String)">
+            <summary>
+            Sets the header.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.CalendarDay.getHeader">
+            <summary>
+            Gets the header.
+            </summary>
+            <returns>Header text as a string</returns>
         </member>
         <member name="M:System.Windows.Forms.Calendar.CalendarDay.AddContainedItem(System.Windows.Forms.Calendar.CalendarItem)">
             <summary>

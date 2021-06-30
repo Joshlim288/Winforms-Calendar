@@ -29,6 +29,8 @@ namespace System.Windows.Forms.Calendar
         private bool _overflowStartSelected;
         private bool _overlowEndSelected;
         private CalendarTimeScaleUnit[] _timeUnits;
+        private string header = null;
+        private int physicianID;
 
         #endregion
 
@@ -217,6 +219,22 @@ namespace System.Windows.Forms.Calendar
         public override string ToString()
         {
             return Date.ToShortDateString();
+        }
+        /// <summary>
+        /// Sets the header.
+        /// </summary>
+        public void setHeader(string header)
+        {
+            this.header = header;
+        }
+        /// <summary>
+        /// Gets the header.
+        /// </summary>
+        /// <returns>Header text as a string</returns>
+        public string getHeader()
+        {
+            if (this.header != null) return this.header;
+            else return this.Date.ToString("dddd");
         }
 
         #endregion

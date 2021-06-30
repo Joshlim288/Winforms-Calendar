@@ -324,4 +324,13 @@
     <G>215</G>
     <B>0</B>
   </ItemInfo>
+  <ItemInfo>
+    <StartTime>0001-01-05T00:00:00</StartTime>
+    <EndTime>0001-01-05T23:59:59</EndTime>
+    <Text />
+    <A>0</A>
+    <R>0</R>
+    <G>0</G>
+    <B>0</B>
+  </ItemInfo>
 </ArrayOfItemInfo>
