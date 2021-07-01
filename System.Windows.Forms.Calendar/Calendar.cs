@@ -191,7 +191,12 @@ namespace System.Windows.Forms.Calendar
 
         // Below are used for daily multi-column view
         private Dictionary<int, DateTime> idToDayMapping;
-        private DateTime selectedDay;
+        
+
+        /// <summary>
+        /// Used both as a flag to detect multi-column daily view, and to represent the chosen day for the view
+        /// </summary>
+        public DateTime selectedDay;
         
 
         #endregion
@@ -222,6 +227,7 @@ namespace System.Windows.Forms.Calendar
             this.m_VScrollBar.Visible = false;
             this.m_VScrollBar.Parent = this;
             this.m_VScrollBar.Scroll += new ScrollEventHandler(m_VScrollBar_Scroll);
+
             idToDayMapping = new Dictionary<int, DateTime>();
             selectedDay = DateTime.MinValue;
 
@@ -839,6 +845,7 @@ namespace System.Windows.Forms.Calendar
             {
                 idToDayMapping.Add(physicianIDs[i], DateTime.MinValue.AddDays(i));
             }
+            Renderer.PerformLayout();
         }
         /// <summary>
         /// Resets variables used in daily view

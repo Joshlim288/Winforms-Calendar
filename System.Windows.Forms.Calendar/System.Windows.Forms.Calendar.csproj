@@ -139,6 +139,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Calendar.ico" />
     <Content Include="ChangeLog.txt" />
+    <EmbeddedResource Include="Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MonthView.ico" />
   </ItemGroup>
   <ItemGroup>

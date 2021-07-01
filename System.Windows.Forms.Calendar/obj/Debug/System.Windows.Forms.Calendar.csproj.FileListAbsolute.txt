@@ -11,3 +11,5 @@ C:\Users\Josh\Desktop\TCM\Calendar\Winforms-Calendar\System.Windows.Forms.Calend
 C:\Users\Josh\Desktop\TCM\Calendar\Winforms-Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.dll
 C:\Users\Josh\Desktop\TCM\Calendar\Winforms-Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.pdb
 C:\Users\Josh\Desktop\TCM\Calendar\Winforms-Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.csprojAssemblyReference.cache
+C:\Users\Josh\Desktop\TCM\Calendar\Winforms-Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.Calendar.resources
+C:\Users\Josh\Desktop\TCM\Calendar\Winforms-Calendar\System.Windows.Forms.Calendar\obj\Debug\System.Windows.Forms.Calendar.csproj.GenerateResource.cache

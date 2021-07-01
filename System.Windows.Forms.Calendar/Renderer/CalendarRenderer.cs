@@ -661,6 +661,21 @@ namespace System.Windows.Forms.Calendar
                 curLeft = TimeScaleBounds.Right;
                 dayHeight = Calendar.ClientSize.Height - 1;
                 dayWidth = (Calendar.ClientSize.Width - TimeScaleBounds.Width - scrollBarWidth) / Calendar.Days.Count;
+                /*
+                if (Calendar.selectedDay != DateTime.MinValue)
+                {
+                    int maxWidth = 0, curWidth = 0, totalWidth = 0;
+                    foreach (CalendarDay day in Calendar.Days)
+                    {
+                        curWidth = TextRenderer.MeasureText("30   " + day.getHeader() + "      ", Calendar.Font).Width;
+                        totalWidth += curWidth;
+                        if (maxWidth < curWidth) maxWidth = curWidth;
+                    }
+                    dayWidth = maxWidth;
+                    Calendar.Size = new Size(totalWidth + TimeScaleBounds.Width + scrollBarWidth, Calendar.Size.Height);
+                }
+                */
+                
 
                 for (int i = 0; i < Calendar.Days.Count; i++)
                 {
@@ -1437,10 +1452,12 @@ namespace System.Windows.Forms.Calendar
         public virtual void OnDrawDay(CalendarRendererDayEventArgs e)
         {
             CalendarDay day = e.Day;
-
+            string dayNum = "";
+            if (day.getHeader() == day.Date.ToString("dddd")) dayNum = day.Date.ToString("dd");
+            
             CalendarRendererBoxEventArgs hevt = new CalendarRendererBoxEventArgs(e,
                                                     day.HeaderBounds,
-                                                    day.Date.ToString("dd"),
+                                                    dayNum,
                                                     TextFormatFlags.VerticalCenter);
             // no bold
             //hevt.Font = new Font(Calendar.Font, FontStyle.Bold);
