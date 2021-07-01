@@ -550,7 +550,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public DateTime getMappedSelectionStart()
         {
-                return new DateTime(selectedDay.Year, selectedDay.Month, selectedDay.Day, _selectedElementStart.Date.Hour, _selectedElementStart.Date.Minute, 0);
+            return new DateTime(selectedDay.Year, selectedDay.Month, selectedDay.Day, _selectedElementStart.Date.Hour, _selectedElementStart.Date.Minute, 0);
         }
 
         /// <summary>
@@ -558,7 +558,19 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public DateTime getMappedSelectionEnd()
         {
-                return new DateTime(selectedDay.Year, selectedDay.Month, selectedDay.Day, _selectedElementEnd.Date.Hour, _selectedElementEnd.Date.Minute, 0);
+            return new DateTime(selectedDay.Year, selectedDay.Month, selectedDay.Day, _selectedElementEnd.Date.Hour, _selectedElementEnd.Date.Minute, 0);
+        }
+        /// <summary>
+        /// Gets the mapped selection physicianID for multi-column daily view.
+        /// </summary>
+        /// <returns>-1 if ID was not found, the physicianID if the search was successful</returns>
+        public int getMappedSelectionID()
+        {
+            foreach (int id in idToDayMapping.Keys)
+            {
+                if (_selectedElementStart.Date.DayOfWeek == idToDayMapping[id].DayOfWeek) return id;
+            }
+            return -1;
         }
         
 
