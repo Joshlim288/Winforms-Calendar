@@ -1,3 +1,5 @@
+Fork modified for use with a specific project
+
 # A Winforms-Calendar control (System.Windows.Forms.Calendar)
 
 A calendar UI control for WinForms that can handle appointments, all-day events, and multiple day view support.
