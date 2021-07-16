@@ -105,4 +105,32 @@ namespace System.Windows.Forms.Calendar
 
         #endregion
     }
+
+    public class DailyHighlightRange
+    {
+        public int id;
+        public TimeSpan StartTime;
+        public TimeSpan EndTime;
+        /// <summary>
+        /// Creates a new empty range
+        /// </summary>
+        public DailyHighlightRange()
+        {
+
+        }
+
+        /// <summary>
+        /// Creates a new range with the specified information
+        /// </summary>
+        /// <param name="day"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        public DailyHighlightRange(int id, TimeSpan startTime, TimeSpan endTime)
+            : this()
+        {
+            this.id = id;
+            this.startTime = startTime;
+            this.endTime = endTime;
+        }
+    }
 }

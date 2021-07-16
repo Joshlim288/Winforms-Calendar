@@ -190,13 +190,13 @@ namespace System.Windows.Forms.Calendar
         internal bool m_Updating;
 
         // Below are used for daily multi-column view
-        private Dictionary<int, DateTime> idToDayMapping;
-        
-
+        public Dictionary<int, DateTime> idToDayMapping;
         /// <summary>
         /// Used both as a flag to detect multi-column daily view, and to represent the chosen day for the view
         /// </summary>
         public DateTime selectedDay;
+        private int oldMaximumFullDays;
+        public List<DailyHighlightRange> dailyHighlightRanges;
         
 
         #endregion
@@ -845,19 +845,26 @@ namespace System.Windows.Forms.Calendar
         /// <param name="columnCount">Number of physicians</param>
         /// <param name="physicianNames">Names of physicians</param>
         /// <param name="physicianIDs">IDs of physicians. ID of physician must be at same index as his/her name in physicianNames</param>
+        /// <param name="highlightRanges">Time highlight ranges for the physicians</param>
         /// <param name="selectedDay"></param>
-        public void startDailyView(int columnCount, string[] physicianNames, int[] physicianIDs, DateTime selectedDay)
+        public void startDailyView(int columnCount, List<String> physicianNames, List<int> physicianIDs, List<DailyHighlightRange> highlightRanges, DateTime selectedDay)
         {
-            MaximumFullDays = columnCount;
-            SetViewRange(DateTime.MinValue, DateTime.MinValue.AddDays(columnCount - 1));
-            setDayHeaders(physicianNames);
-            idToDayMapping.Clear();
-            this.selectedDay = selectedDay;
-            for (int i = 0; i<columnCount; i++)
+            if (columnCount > 0)
             {
-                idToDayMapping.Add(physicianIDs[i], DateTime.MinValue.AddDays(i));
+                oldMaximumFullDays = MaximumFullDays;
+                MaximumFullDays = columnCount;
+                dailyHighlightRanges = highlightRanges;
+                SetViewRange(DateTime.MinValue, DateTime.MinValue.AddDays(columnCount - 1));
+                setDayHeaders(physicianNames.ToArray());
+                idToDayMapping.Clear();
+                this.selectedDay = selectedDay;
+                for (int i = 0; i < columnCount; i++)
+                {
+                    idToDayMapping.Add(physicianIDs[i], DateTime.MinValue.AddDays(i));
+                }
+                Renderer.PerformLayout();
+
             }
-            Renderer.PerformLayout();
         }
         /// <summary>
         /// Resets variables used in daily view
@@ -866,20 +873,40 @@ namespace System.Windows.Forms.Calendar
         {
             idToDayMapping.Clear();
             selectedDay = DateTime.MinValue;
+            MaximumFullDays = oldMaximumFullDays;
         }
         /// <summary>
         /// Adds a CalendarItem to the Items property to be displayed in multi-column daily view
         /// </summary>
         /// <param name="physicianID">ID of the physician this CalendarItem belongs to</param>
         /// <param name="item">CalendarItem to be displayed</param>
-        public void addItemByPhysicianID(int physicianID, CalendarItem item)
+        public void addItemByPhysicianID(int? physicianID, CalendarItem item)
         {
-            DateTime mappedDT = idToDayMapping[physicianID];
-            DateTime oldDT = item.StartDate;
-            item.StartDate = new DateTime(mappedDT.Year, mappedDT.Month, mappedDT.Day, oldDT.Hour, oldDT.Minute, 0);
-            oldDT = item.EndDate;
-            item.EndDate = new DateTime(mappedDT.Year, mappedDT.Month, mappedDT.Day, oldDT.Hour, oldDT.Minute, 0);
-            Items.Add(item);
+            DateTime oldDT;
+            if (physicianID != null)
+            {
+                DateTime mappedDT = idToDayMapping[(int)physicianID];
+                oldDT = item.StartDate;
+                item.StartDate = new DateTime(mappedDT.Year, mappedDT.Month, mappedDT.Day, oldDT.Hour, oldDT.Minute, 0);
+                oldDT = item.EndDate;
+                item.EndDate = new DateTime(mappedDT.Year, mappedDT.Month, mappedDT.Day, oldDT.Hour, oldDT.Minute, 0);
+                Items.Add(item);
+            }
+            else
+            {
+                DateTime startDate, endDate;
+                CalendarItem tempItem;
+                foreach(DateTime mappedDT in idToDayMapping.Values)
+                {
+                    oldDT = item.StartDate;
+                    startDate = new DateTime(mappedDT.Year, mappedDT.Month, mappedDT.Day, oldDT.Hour, oldDT.Minute, 0);
+                    oldDT = item.EndDate;
+                    endDate = new DateTime(mappedDT.Year, mappedDT.Month, mappedDT.Day, oldDT.Hour, oldDT.Minute, 0);
+                    tempItem = new CalendarItem(this, startDate, endDate, item.Subject);
+                    tempItem.Tag = item.Tag;
+                    Items.Add(tempItem);
+                }
+            }
         }
 
         /// <summary>
@@ -1319,7 +1346,8 @@ namespace System.Windows.Forms.Calendar
         /// <param name="dateEnd"></param>
         public bool ViewIntersects(DateTime dateStart, DateTime dateEnd)
         {
-            return DateIntersects(ViewStart, ViewEnd, dateStart, dateEnd);
+            if (selectedDay == DateTime.MinValue) return DateIntersects(ViewStart, ViewEnd, dateStart, dateEnd);
+            else return DateIntersects(selectedDay, selectedDay.Add(new TimeSpan(23, 59, 59)), dateStart, dateEnd);
         }
 
         /// <summary>
@@ -1342,7 +1370,6 @@ namespace System.Windows.Forms.Calendar
                 foreach (CalendarDay day in Days)
                 {
                     day.setHeader(headers[i]);
-                    Console.WriteLine(day.getHeader());
                     i++;
                 }
             }

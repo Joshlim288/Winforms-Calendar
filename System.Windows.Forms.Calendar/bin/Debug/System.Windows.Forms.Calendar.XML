@@ -1309,6 +1309,12 @@
             Retrieves Datetime of calendar selection end, mapped back to the current day from column multi-view
             </summary>
         </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.getMappedSelectionID">
+            <summary>
+            Gets the mapped selection physicianID for multi-column daily view.
+            </summary>
+            <returns>-1 if ID was not found, the physicianID if the search was successful</returns>
+        </member>
         <member name="P:System.Windows.Forms.Calendar.Calendar.MultiSelect">
             <summary>
             Gets or sets a value indicating whether multi select at <see cref="T:System.Windows.Forms.Calendar.CalendarItem"/>.
@@ -1386,7 +1392,7 @@
             Gets the weeks currently visible on the calendar, if <see cref="P:System.Windows.Forms.Calendar.Calendar.DaysMode"/> is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
             </summary>
         </member>
-        <member name="M:System.Windows.Forms.Calendar.Calendar.startDailyView(System.Int32,System.String[],System.Int32[],System.DateTime)">
+        <member name="M:System.Windows.Forms.Calendar.Calendar.startDailyView(System.Int32,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Int32},System.DateTime)">
             <summary>
             Converts calendar view into multi-column view for a single day
             </summary>
@@ -1400,7 +1406,7 @@
             Resets variables used in daily view
             </summary>
         </member>
-        <member name="M:System.Windows.Forms.Calendar.Calendar.addItemByPhysicianID(System.Int32,System.Windows.Forms.Calendar.CalendarItem)">
+        <member name="M:System.Windows.Forms.Calendar.Calendar.addItemByPhysicianID(System.Nullable{System.Int32},System.Windows.Forms.Calendar.CalendarItem)">
             <summary>
             Adds a CalendarItem to the Items property to be displayed in multi-column daily view
             </summary>

@@ -1179,6 +1179,11 @@
             <para>For checking StartDate and EndDate has changed or not.</para>
             </summary>
         </member>
+        <member name="F:System.Windows.Forms.Calendar.Calendar.selectedDay">
+            <summary>
+            Used both as a flag to detect multi-column daily view, and to represent the chosen day for the view
+            </summary>
+        </member>
         <member name="M:System.Windows.Forms.Calendar.Calendar.#ctor">
             <summary>
             Creates a new <see cref="T:System.Windows.Forms.Calendar.Calendar"/> control
@@ -1304,6 +1309,12 @@
             Retrieves Datetime of calendar selection end, mapped back to the current day from column multi-view
             </summary>
         </member>
+        <member name="M:System.Windows.Forms.Calendar.Calendar.getMappedSelectionID">
+            <summary>
+            Gets the mapped selection physicianID for multi-column daily view.
+            </summary>
+            <returns>-1 if ID was not found, the physicianID if the search was successful</returns>
+        </member>
         <member name="P:System.Windows.Forms.Calendar.Calendar.MultiSelect">
             <summary>
             Gets or sets a value indicating whether multi select at <see cref="T:System.Windows.Forms.Calendar.CalendarItem"/>.
@@ -1381,7 +1392,7 @@
             Gets the weeks currently visible on the calendar, if <see cref="P:System.Windows.Forms.Calendar.Calendar.DaysMode"/> is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
             </summary>
         </member>
-        <member name="M:System.Windows.Forms.Calendar.Calendar.startDailyView(System.Int32,System.String[],System.Int32[],System.DateTime)">
+        <member name="M:System.Windows.Forms.Calendar.Calendar.startDailyView(System.Int32,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Int32},System.DateTime)">
             <summary>
             Converts calendar view into multi-column view for a single day
             </summary>

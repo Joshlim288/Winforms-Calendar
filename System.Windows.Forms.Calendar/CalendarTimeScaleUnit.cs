@@ -161,21 +161,49 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         internal bool CheckHighlighted()
         {
-            for (int i = 0; i < Day.Calendar.HighlightRanges.Length; i++)
+            if (Day.Calendar.selectedDay != DateTime.MinValue)
             {
-                CalendarHighlightRange range = Day.Calendar.HighlightRanges[i];
-
-                if (range.DayOfWeek != Date.DayOfWeek) 
-                    continue;
-
-                if (Date.TimeOfDay.CompareTo(range.StartTime) >= 0
-                    && Date.TimeOfDay.CompareTo(range.EndTime) < 0 )
+                for (int i = 0; i < Day.Calendar.dailyHighlightRanges.Count; i++)
                 {
-                    return true;
-                }
+                    DailyHighlightRange range = Day.Calendar.dailyHighlightRanges[i];
+                    int id = 0;
+                    foreach(int key in Day.Calendar.idToDayMapping.Keys)
+                    {
+                        if (Day.Calendar.idToDayMapping[key] == Day.Date)
+                        {
+                            id = key;
+                            break;
+                        }
+                    }
+                    if (range.id != id)
+                        continue;
 
+                    if (Date.TimeOfDay.CompareTo(range.StartTime) >= 0
+                        && Date.TimeOfDay.CompareTo(range.EndTime) < 0)
+                    {
+                        return true;
+                    }
+
+                }
+                return false;
             }
-            return false;
+            else
+            {
+                for (int i = 0; i < Day.Calendar.HighlightRanges.Length; i++)
+                {
+                    CalendarHighlightRange range = Day.Calendar.HighlightRanges[i];
+                    if (range.DayOfWeek != Date.DayOfWeek)
+                        continue;
+
+                    if (Date.TimeOfDay.CompareTo(range.StartTime) >= 0
+                        && Date.TimeOfDay.CompareTo(range.EndTime) < 0)
+                    {
+                        return true;
+                    }
+
+                }
+                return false;
+            }
         }
 
         #endregion
