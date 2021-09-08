@@ -1,3 +1,6 @@
+# Fork modified for use with a specific project. Not meant for general use, but you can see how I modified it
+- Added feature to have multiple columns when the date range is set to a single day. Used to handle multiple schedules for a single day.
+
 # A Winforms-Calendar control (System.Windows.Forms.Calendar)
 
 A calendar UI control for WinForms that can handle appointments, all-day events, and multiple day view support.
