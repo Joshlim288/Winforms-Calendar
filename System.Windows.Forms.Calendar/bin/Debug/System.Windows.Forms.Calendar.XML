@@ -365,6 +365,19 @@
             </summary>
             <param name="calendar">Calendar that this range belongs to</param>
         </member>
+        <member name="M:System.Windows.Forms.Calendar.DailyHighlightRange.#ctor">
+            <summary>
+            Creates a new empty range
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.Calendar.DailyHighlightRange.#ctor(System.Int32,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Creates a new range with the specified information
+            </summary>
+            <param name="day"></param>
+            <param name="startTime"></param>
+            <param name="endTime"></param>
+        </member>
         <member name="T:System.Windows.Forms.Calendar.CalendarItemCancelEventArgs">
             <summary>
             CalendarItemCancelEventArgs
@@ -1392,13 +1405,14 @@
             Gets the weeks currently visible on the calendar, if <see cref="P:System.Windows.Forms.Calendar.Calendar.DaysMode"/> is <see cref="F:System.Windows.Forms.Calendar.DaysModes.Short"/>
             </summary>
         </member>
-        <member name="M:System.Windows.Forms.Calendar.Calendar.startDailyView(System.Int32,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Int32},System.DateTime)">
+        <member name="M:System.Windows.Forms.Calendar.Calendar.startDailyView(System.Int32,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Windows.Forms.Calendar.DailyHighlightRange},System.DateTime)">
             <summary>
             Converts calendar view into multi-column view for a single day
             </summary>
             <param name="columnCount">Number of physicians</param>
             <param name="physicianNames">Names of physicians</param>
             <param name="physicianIDs">IDs of physicians. ID of physician must be at same index as his/her name in physicianNames</param>
+            <param name="highlightRanges">Time highlight ranges for the physicians</param>
             <param name="selectedDay"></param>
         </member>
         <member name="M:System.Windows.Forms.Calendar.Calendar.endDailyView">

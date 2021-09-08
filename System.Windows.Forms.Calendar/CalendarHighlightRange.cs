@@ -129,8 +129,8 @@ namespace System.Windows.Forms.Calendar
             : this()
         {
             this.id = id;
-            this.startTime = startTime;
-            this.endTime = endTime;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
         }
     }
 }

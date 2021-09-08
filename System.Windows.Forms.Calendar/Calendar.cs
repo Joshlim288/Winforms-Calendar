@@ -568,7 +568,7 @@ namespace System.Windows.Forms.Calendar
         {
             foreach (int id in idToDayMapping.Keys)
             {
-                if (_selectedElementStart.Date.DayOfWeek == idToDayMapping[id].DayOfWeek) return id;
+                if (_selectedElementStart.Date.DayOfYear == idToDayMapping[id].DayOfYear) return id;
             }
             return -1;
         }
@@ -863,7 +863,7 @@ namespace System.Windows.Forms.Calendar
                     idToDayMapping.Add(physicianIDs[i], DateTime.MinValue.AddDays(i));
                 }
                 Renderer.PerformLayout();
-
+                UpdateHighlights();
             }
         }
         /// <summary>
